@@ -1,10 +1,10 @@
 # frozen_string_literal: true
 
-require_relative "lib/ruby/brightpearl/version"
+require_relative "lib/brightpearl/version"
 
 Gem::Specification.new do |spec|
   spec.name = "ruby-brightpearl"
-  spec.version = Ruby::Brightpearl::VERSION
+  spec.version = Brightpearl::VERSION
   spec.authors = ["vicvans20"]
   spec.email = ["vicvans20@gmail.com"]
 
