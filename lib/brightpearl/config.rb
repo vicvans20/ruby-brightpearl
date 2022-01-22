@@ -5,7 +5,7 @@ module Brightpearl
     attr_accessor :dev_ref      # Dev ref
     attr_accessor :account      # Brightpearl account
     # 
-    # attr_accessor :token
+    attr_accessor :token
     # attr_accessor :refresh_token
   end 
 end 
