@@ -1,6 +1,6 @@
 module Brightpearl
   class Client
-    def self.send_request(path:, verb: :get, options: {} )
+    def self.send_request(path:, method: :get, options: {} )
       headers = {
         "brightpearl-app-ref": "#{Brightpearl.config.app_ref}",
         "brightpearl-dev-ref": "#{Brightpearl.config.dev_ref}",
@@ -9,7 +9,7 @@ module Brightpearl
 
       url = "#{base_url}/#{path}"
 
-      case verb
+      case method
       when :get
         response = HTTParty.get(url, headers: headers )
       when :delete
@@ -36,6 +36,13 @@ module Brightpearl
       puts headers
       puts url
       json = JSON.parse(response.body)
+
+      if response.code == 503 # Unavailable MOST likeyly throttled
+        raise Brightpearl::Throttled.new("Throttled", response: json, code: response.code)
+      end
+      if !!json["errors"]
+        raise Brightpearl::RequestError.new("Request Error", code: response.code, response: response)
+      end
 
       return { 
         payload: json, 
