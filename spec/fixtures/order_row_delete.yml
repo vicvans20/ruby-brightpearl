@@ -1,0 +1,169 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ws-use.brightpearl.com/public-api/barulu/order-service/order
+    body:
+      encoding: UTF-8
+      string: '{"reference":"#0001","orderTypeCode":"SO","parties":{"customer":{"contactId":200}}}'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Jan 2022 23:47:21 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+      Message-Type:
+      - post-order
+      Ruid:
+      - 898293bf-20d1-4920-b801-e7ae24e139ee
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '39236'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":336}'
+  recorded_at: Wed, 26 Jan 2022 23:47:21 GMT
+- request:
+    method: post
+    uri: https://ws-use.brightpearl.com/public-api/barulu/order-service/order/336/row
+    body:
+      encoding: UTF-8
+      string: '{"productName":"Brightpearl Product","quantity":{"magnitude":5},"rowValue":{"taxCode":"13","rowNet":{"value":100},"rowTax":{"value":13}}}'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Jan 2022 23:47:21 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+      Message-Type:
+      - post-order-row
+      Ruid:
+      - 4f573a15-e685-4f63-a89f-5b3324ebdbb7
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '38636'
+      Brightpearl-Requests-Remaining:
+      - '198'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":402}'
+  recorded_at: Wed, 26 Jan 2022 23:47:21 GMT
+- request:
+    method: delete
+    uri: https://ws-use.brightpearl.com/public-api/barulu/order-service/order/336/row/402
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Jan 2022 23:47:22 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - delete-order-row
+      Ruid:
+      - 6f444278-65a8-4746-b9fa-17dda94fcf51
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '38137'
+      Brightpearl-Requests-Remaining:
+      - '197'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Wed, 26 Jan 2022 23:47:22 GMT
+recorded_with: VCR 6.0.0

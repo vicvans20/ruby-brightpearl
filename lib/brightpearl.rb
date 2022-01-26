@@ -6,6 +6,7 @@ require_relative 'brightpearl/errors'
 require_relative 'brightpearl/client'
 require_relative 'brightpearl/resource'
 require_relative 'brightpearl/resources/order'
+require_relative 'brightpearl/resources/order_row'
 
 require 'httparty'
 require 'uri'
