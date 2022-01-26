@@ -29,6 +29,8 @@ module Brightpearl
           headers: headers.merge({ "Content-Type": "application/json" }), 
           body: options[:body].to_json,
         )
+      when :options
+        response = HTTParty.options(url, headers: headers )
       else
         puts "Unrecognized http method"
       end

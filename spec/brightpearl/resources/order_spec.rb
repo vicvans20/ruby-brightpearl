@@ -68,7 +68,7 @@ RSpec.describe Brightpearl::Order do
       end
     end
 
-  end # get order
+  end # GET
 
   describe "POST" do
     let(:post_body) {{ reference: example_reference,}}
@@ -171,7 +171,7 @@ RSpec.describe Brightpearl::Order do
 
     end
 
-  end # post order
+  end # POST
 
   describe "SEARCH" do
     it "returns orders as expected" do
@@ -199,7 +199,7 @@ RSpec.describe Brightpearl::Order do
         expect { Brightpearl::Order.search(orderStatusId: "BAD PARAM") }.to raise_error(an_instance_of(Brightpearl::RequestError).and having_attributes(status: 500, code: "CMNC-018"))
       end
     end
-  end # search
+  end # SEARCH
 
   describe "PATCH" do
     let(:create_params) {{ reference: example_reference, orderTypeCode: "SO", parties: { customer: { contactId: 200 } }}}
@@ -230,5 +230,22 @@ RSpec.describe Brightpearl::Order do
       end
     end
   end # PATCH
+
+  describe "OPTIONS" do
+
+    it "returns uris of requested orders" do
+      VCR.use_cassette("order_options") do
+        response = Brightpearl::Order.options("1-100,320,321")
+        expect(response).to include(
+          payload: a_hash_including(
+            "response" => {
+              "getUris" => be_truthy
+            }
+          ),
+          quota_remaining: be_truthy
+        )
+      end
+    end
+  end # OPTIONS
 
 end

@@ -24,6 +24,11 @@ module Brightpearl
       def patch(id, params)
         send_request(path: "order-service/order/#{id}", method: :patch, body: params)
       end
+
+      # https://api-docs.brightpearl.com/order/order/options.html
+      def options(id_set)
+        send_request(path: "order-service/order/#{id_set}", method: :options)
+      end
   
       # https://api-docs.brightpearl.com/order/order/search.html
       def search(query_params = {})
