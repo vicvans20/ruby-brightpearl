@@ -1,0 +1,67 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/order-service/order/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Jan 2022 15:31:36 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2999'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-order
+      Ruid:
+      - 933c7167-f4da-42df-840b-1ff8d2f7eac3
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '23329'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"id":1,"parentOrderId":0,"orderTypeCode":"SO","reference":"","version":7,"state":{"tax":"INVOICED"},"orderStatus":{"orderStatusId":4,"name":"Invoiced"},"tax":{"errors":[]},"orderPaymentStatus":"UNPAID","stockStatusCode":"SOA","allocationStatusCode":"AAA","shippingStatusCode":"ASS","placedOn":"2020-03-31T15:02:44.000-06:00","createdOn":"2020-03-31T15:02:44.000-06:00","updatedOn":"2020-03-31T15:57:21.000-06:00","closedOn":"2020-03-31T15:57:20.000-06:00","createdById":206,"priceListId":1,"priceModeCode":"INC","delivery":{"shippingMethodId":0},"invoices":[{"invoiceReference":"SI-1001","taxDate":"2020-03-31T00:00:00.000-06:00","dueDate":"2020-04-29T18:00:00.000-06:00"}],"currency":{"accountingCurrencyCode":"USD","orderCurrencyCode":"USD","exchangeRate":"1.000000","fixedExchangeRate":false},"totalValue":{"net":"9.09","taxAmount":"0.91","baseNet":"9.09","baseTaxAmount":"0.91","baseTotal":"10.00","total":"10.00"},"assignment":{"current":{"staffOwnerContactId":0,"projectId":0,"channelId":0,"leadSourceId":0,"teamId":0}},"parties":{"customer":{"contactId":200,"addressFullName":"Demo
+        Customer","companyName":"Customer Company Ltd.","addressLine1":"34 Lime St","addressLine2":"Barton","addressLine3":"Sheffield","addressLine4":"South
+        Yorkshire","postalCode":"S1 4RT","country":"United Kingdom","telephone":"01245
+        845632","mobileTelephone":"","fax":"","email":"demo@test.com","countryId":222,"countryIsoCode":"GB","countryIsoCode3":"GBR"},"delivery":{"addressFullName":"Demo
+        Customer","companyName":"Customer Company Ltd.","addressLine1":"34 Lime St","addressLine2":"Barton","addressLine3":"Sheffield","addressLine4":"South
+        Yorkshire","postalCode":"S1 4RT","country":"United Kingdom","telephone":"01245
+        845632","mobileTelephone":"","fax":"","email":"demo@test.com","countryId":222,"countryIsoCode":"GB","countryIsoCode3":"GBR"},"billing":{"contactId":200,"addressFullName":"Demo
+        Customer","companyName":"Customer Company Ltd.","addressLine1":"34 Lime St","addressLine2":"Barton","addressLine3":"Sheffield","addressLine4":"South
+        Yorkshire","postalCode":"S1 4RT","country":"United Kingdom","telephone":"01245
+        845632","mobileTelephone":"","fax":"","email":"demo@test.com","countryId":222,"countryIsoCode":"GB","countryIsoCode3":"GBR"}},"orderRows":{"1":{"orderRowSequence":"10","productId":1007,"productName":"Nice
+        Shirt for Summer","productSku":"TEST001","quantity":{"magnitude":"1.0000"},"itemCost":{"currencyCode":"USD","value":"5.0000"},"productPrice":{"currencyCode":"USD","value":"10.0000"},"discountPercentage":"0.00","rowValue":{"taxRate":"10.0000","taxCode":"T","taxCalculator":"brightpearl","rowNet":{"currencyCode":"USD","value":"9.0909"},"rowTax":{"currencyCode":"USD","value":"0.91"},"taxClassId":2},"nominalCode":"4000","composition":{"bundleParent":false,"bundleChild":false,"parentOrderRowId":0},"clonedFromId":0}},"warehouseId":2,"acknowledged":0,"costPriceListId":1,"historicalOrder":false,"originalInvoiceDate":"2020-03-31T00:00:00.000-06:00","orderWeighting":100}]}'
+  recorded_at: Wed, 26 Jan 2022 15:31:36 GMT
+recorded_with: VCR 6.0.0

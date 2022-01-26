@@ -7,31 +7,31 @@ module Brightpearl
                   :installed_integration_instance_id, :warehouse_id, :staff_owner_contact_id,
                   :tax_date, :department_id, :delivery_date
 
-    
-    def self.get(id_set, query_params = nil)
-      url = "order-service/order/#{id_set}"
-      url = "#{url}?#{to_query(query_params)}" if query_params
-      send_request(path: url)
+    class << self
+      def get(id_set, query_params = nil)
+        url = "order-service/order/#{id_set}"
+        url = "#{url}?#{to_query(query_params)}" if query_params
+        send_request(path: url)
+      end
+  
+      def post(params)
+        send_request("order-service/order", method: :post, body: params)
+      end
+  
+      def order_row_post(order_id, params)
+        send_request("order-service/order/#{order_id}/row", method: "post", body: params)
+      end
+  
+      def search_order(query_params)
+        response = send_request("order-service/order-search?#{to_query(query_params)}")
+        return response.merge({ # modify final payload to set search results as objects
+          payload: {
+            response: response[:payload], # original response
+            records: response[:payload]["response"]["results"].map { |item| Order.new(item) },
+          }
+         })
+      end
     end
-
-    def self.post(params)
-      send_request("order-service/order", method: :post, body: params)
-    end
-
-    def self.order_row_post(order_id, params)
-      send_request("order-service/order/#{order_id}/row", method: "post", body: params)
-    end
-
-    def search_order(query_params)
-      response = send_request("order-service/order-search?#{to_query(query_params)}")
-      return response.merge({ # modify final payload to set search results as objects
-        payload: {
-          response: response[:payload], # original response
-          records: response[:payload]["response"]["results"].map { |item| Order.new(item) },
-        }
-       })
-    end
-
 
     # DSL
     # ARA => API Record Array(from search and other endpoints)

@@ -33,7 +33,6 @@ module Brightpearl
         puts "Unrecognized http method"
       end
 
-      puts headers
       puts url
       json = JSON.parse(response.body)
 
