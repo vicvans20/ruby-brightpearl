@@ -2,7 +2,7 @@
 RSpec.describe Brightpearl::Order do
   let(:example_reference){ "#0001" }
 
-  describe "Get order" do
+  describe "GET" do
 
     it "returns one sale order" do
       VCR.use_cassette("order_get_one") do
@@ -70,7 +70,7 @@ RSpec.describe Brightpearl::Order do
 
   end # get order
 
-  describe "Post" do
+  describe "POST" do
     let(:post_body) {{ reference: example_reference,}}
 
     # For SO/SC
@@ -173,7 +173,7 @@ RSpec.describe Brightpearl::Order do
 
   end # post order
 
-  describe "Search" do
+  describe "SEARCH" do
     it "returns orders as expected" do
       VCR.use_cassette("order_search") do
         response = Brightpearl::Order.search(customerRef: example_reference)
@@ -200,5 +200,35 @@ RSpec.describe Brightpearl::Order do
       end
     end
   end # search
+
+  describe "PATCH" do
+    let(:create_params) {{ reference: example_reference, orderTypeCode: "SO", parties: { customer: { contactId: 200 } }}}
+    let(:patch_params){[
+      { "op": "replace", "path": "/delivery/deliveryDate", "value": "2022-01-20" },
+      { "op": "replace", "path": "/reference", "value": "#XYZ" },
+    ]}
+
+    it "updates an order" do
+      VCR.use_cassette("order_patch") do
+        response = Brightpearl::Order.post(create_params)
+        order_id = response[:payload]["response"]
+        response = Brightpearl::Order.patch(order_id, patch_params)
+        expect(response).to include(
+          payload: a_hash_including(
+            "response" => a_hash_including( "acknowledged" => 0 )
+          ),
+          quota_remaining: be_truthy
+        )
+      end
+    end
+
+    it "returns an error when using invalid operation" do
+      VCR.use_cassette("order_patch_error_operation") do
+        response = Brightpearl::Order.post(create_params)
+        order_id = response[:payload]["response"]
+        expect { Brightpearl::Order.patch(order_id, [{ "op": "add", "path": "/reference", "value": "#XYZ" } ]) }.to raise_error(an_instance_of(Brightpearl::RequestError).and having_attributes(status: 500, code: "CMNC-044") )
+      end
+    end
+  end # PATCH
 
 end

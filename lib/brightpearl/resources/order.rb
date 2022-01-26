@@ -20,9 +20,9 @@ module Brightpearl
         send_request(path: "order-service/order", method: :post, body: params)
       end
   
-      # https://api-docs.brightpearl.com/order/order-row/post.html
-      def order_row_post(order_id, params)
-        send_request(path: "order-service/order/#{order_id}/row", method: :post, body: params)
+      # https://api-docs.brightpearl.com/order/order/patch.html
+      def patch(id, params)
+        send_request(path: "order-service/order/#{id}", method: :patch, body: params)
       end
   
       # https://api-docs.brightpearl.com/order/order/search.html
