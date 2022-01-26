@@ -68,4 +68,107 @@ RSpec.describe Brightpearl::Order do
 
   end # get order
 
+  describe "Post" do
+    let(:post_body) {{ reference: "#0001",}}
+
+    # For SO/SC
+    let(:sale_params) do
+      post_body.merge({
+        orderTypeCode: "SO",
+        parties: {
+          customer: {
+            contactId: 200
+          }
+        }
+      })
+    end
+    # For PO/PC
+    let(:purchase_params) do
+      post_body.merge({
+        orderTypeCode: "PO",
+        parties: {
+          supplier: {
+            contactId: 418
+          }
+        }
+      })
+    end
+
+    context "Success cases" do
+      it "creates a SO" do
+        VCR.use_cassette("order_post_so") do
+          response = Brightpearl::Order.post(sale_params)
+          expect(response).to include(
+            payload: a_hash_including(
+              "response" => be > 0
+            ),
+            quota_remaining: be_truthy
+          )
+        end
+      end
+
+      it "creates a SC" do
+        VCR.use_cassette("order_post_sc") do
+          sc_params = sale_params.merge({ "orderTypeCode" => "SC" })
+          response = Brightpearl::Order.post(sc_params)
+          expect(response).to include(
+            payload: a_hash_including(
+              "response" => be > 0
+            ),
+            quota_remaining: be_truthy
+          )
+        end
+      end
+
+      it "creaes a PO" do
+        VCR.use_cassette("order_post_po") do
+          response = Brightpearl::Order.post(purchase_params)
+          expect(response).to include(
+            payload: a_hash_including(
+              "response" => be > 0
+            ),
+            quota_remaining: be_truthy
+          )
+        end
+      end
+
+      it "creates a PC" do
+        VCR.use_cassette("order_post_pc") do
+          pc_params = purchase_params.merge({ "orderTypeCode" => "PC" })
+          response = Brightpearl::Order.post(pc_params)
+          expect(response).to include(
+            payload: a_hash_including(
+              "response" => be > 0
+            ),
+            quota_remaining: be_truthy
+          )
+        end
+      end
+    end # Success cases
+
+    context "Failure cases" do
+      it "returns an error for unknown orderTypeCode" do
+        VCR.use_cassette("order_post_error_unknown") do
+          params = sale_params.merge({ orderTypeCode: "UK" })
+          expect { Brightpearl::Order.post(params) }.to raise_error(an_instance_of(Brightpearl::RequestError).and having_attributes(status: 400, code: "ORDC-006"))
+        end
+      end
+
+      it "returns an error when parties doesn't correspond orderTypeCode" do
+        VCR.use_cassette("order_post_error_wrong_party") do
+          params = sale_params.merge({ orderTypeCode: "PO" }) # PO over sale params
+          expect { Brightpearl::Order.post(params) }.to raise_error(an_instance_of(Brightpearl::RequestError).and having_attributes(status: 400, code: "ORDC-022"))
+        end
+      end
+
+      it "returns an error when missing required params" do
+        VCR.use_cassette("order_post_error_missing_required") do
+          expect { Brightpearl::Order.post(post_body) }.to raise_error(an_instance_of(Brightpearl::RequestError).and having_attributes(status: 400, code: "ORDC-005"))
+        end
+      end
+
+    end
+
+  end # post order
+
 end

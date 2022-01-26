@@ -1,6 +1,6 @@
 module Brightpearl
   class Client
-    def self.send_request(path:, method: :get, options: {} )
+    def self.send_request(path:, method: :get, **options )
       headers = {
         "brightpearl-app-ref": "#{Brightpearl.config.app_ref}",
         "brightpearl-dev-ref": "#{Brightpearl.config.dev_ref}",
@@ -37,10 +37,10 @@ module Brightpearl
       json = JSON.parse(response.body)
 
       if response.code == 503 # Unavailable MOST likeyly throttled
-        raise Brightpearl::Throttled.new("Throttled", response: json, code: response.code)
+        raise Brightpearl::Throttled.new("Throttled", response: json, status: response.code)
       end
       if !!json["errors"]
-        raise Brightpearl::RequestError.new("Request Error", code: response.code, response: response)
+        raise Brightpearl::RequestError.new("Request Error",  response: json, status: response.code)
       end
 
       return { 

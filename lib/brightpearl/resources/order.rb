@@ -8,22 +8,26 @@ module Brightpearl
                   :tax_date, :department_id, :delivery_date
 
     class << self
+      # https://api-docs.brightpearl.com/order/order/get.html
       def get(id_set, query_params = nil)
         url = "order-service/order/#{id_set}"
         url = "#{url}?#{to_query(query_params)}" if query_params
         send_request(path: url)
       end
   
+      # https://api-docs.brightpearl.com/order/order/post.html
       def post(params)
-        send_request("order-service/order", method: :post, body: params)
+        send_request(path: "order-service/order", method: :post, body: params)
       end
   
+      # https://api-docs.brightpearl.com/order/order-row/post.html
       def order_row_post(order_id, params)
-        send_request("order-service/order/#{order_id}/row", method: "post", body: params)
+        send_request(path: "order-service/order/#{order_id}/row", method: "post", body: params)
       end
   
+      # https://api-docs.brightpearl.com/order/order/search.html
       def search_order(query_params)
-        response = send_request("order-service/order-search?#{to_query(query_params)}")
+        response = send_request(path: "order-service/order-search?#{to_query(query_params)}", method: "post")
         return response.merge({ # modify final payload to set search results as objects
           payload: {
             response: response[:payload], # original response
