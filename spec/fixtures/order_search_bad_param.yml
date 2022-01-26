@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/order-service/order-search?orderStatusId=BAD%20PARAM
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 500
+      message: Internal Server Error
+    headers:
+      Date:
+      - Wed, 26 Jan 2022 17:49:18 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '113'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - bulk-data-search
+      Ruid:
+      - '0629c47c-cbea-4009-bffa-b93777e3dd3c'
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '41092'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":"CMNC-018","message":"The filter orderStatusId\u003dBAD
+        PARAM cannot be parsed as: INTEGER"}]}'
+  recorded_at: Wed, 26 Jan 2022 17:49:18 GMT
+recorded_with: VCR 6.0.0

@@ -22,17 +22,14 @@ module Brightpearl
   
       # https://api-docs.brightpearl.com/order/order-row/post.html
       def order_row_post(order_id, params)
-        send_request(path: "order-service/order/#{order_id}/row", method: "post", body: params)
+        send_request(path: "order-service/order/#{order_id}/row", method: :post, body: params)
       end
   
       # https://api-docs.brightpearl.com/order/order/search.html
-      def search_order(query_params)
-        response = send_request(path: "order-service/order-search?#{to_query(query_params)}", method: "post")
+      def search(query_params = {})
+        response = send_request(path: "order-service/order-search?#{to_query(query_params)}", method: :get)
         return response.merge({ # modify final payload to set search results as objects
-          payload: {
-            response: response[:payload], # original response
-            records: response[:payload]["response"]["results"].map { |item| Order.new(item) },
-          }
+          records: response[:payload]["response"]["results"].map { |item| Order.new(item) },
          })
       end
     end

@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/order-service/order-search?customerRef=%230001
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 26 Jan 2022 17:41:03 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '4203'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - bulk-data-search
+      Ruid:
+      - 26ca92c0-82ab-403e-ab9b-aad32f34bfa4
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '56946'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":{"results":[[322,1,200,3,13,"2022-01-26T10:39:46.000-06:00",4,"#0001",5,null,0,1,null,null,2,0,"2022-01-25T18:00:00.000-06:00",0,null],[323,2,418,6,13,"2022-01-26T10:46:30.000-06:00",4,"#0001",5,null,0,1,null,null,2,0,"2022-01-25T18:00:00.000-06:00",0,"2022-02-02T10:46:31.000-06:00"],[324,3,200,10,13,"2022-01-26T10:48:12.000-06:00",4,"#0001",5,null,0,1,null,null,2,0,"2022-01-25T18:00:00.000-06:00",0,null],[325,4,418,12,13,"2022-01-26T10:50:16.000-06:00",4,"#0001",5,null,0,1,null,null,2,0,"2022-01-25T18:00:00.000-06:00",0,null]],"metaData":{"morePagesAvailable":false,"resultsAvailable":4,"resultsReturned":4,"firstResult":1,"lastResult":4,"columns":[{"name":"orderId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"orderTypeId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":["orderTypeNames"],"isFreeTextSearchable":false,"required":false},{"name":"contactId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"orderStatusId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":["orderStatusNames"],"isFreeTextSearchable":false,"required":false},{"name":"orderStockStatusId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":["orderStockStatusNames"],"isFreeTextSearchable":false,"required":false},{"name":"createdOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"createdById","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"customerRef","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"orderPaymentStatusId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":["orderPaymentStatusNames"],"isFreeTextSearchable":false,"required":false},{"name":"updatedOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"parentOrderId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"orderShippingStatusId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":["orderShippingStatusNames"],"isFreeTextSearchable":false,"required":false},{"name":"externalRef","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"installedIntegrationInstanceId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"warehouseId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"staffOwnerContactId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"taxDate","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"departmentId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"deliveryDate","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false}],"sorting":[{"filterable":{"name":"orderId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},"direction":"ASC"}]}},"reference":{"orderShippingStatusNames":{"1":"No
+        stock tracked products on order"},"orderTypeNames":{"1":"SALES_ORDER","2":"PURCHASE_ORDER","3":"SALES_CREDIT","4":"PURCHASE_CREDIT"},"orderPaymentStatusNames":{"5":"NOT_APPLICABLE"},"orderStockStatusNames":{"13":"Unset"},"orderStatusNames":{"3":"New
+        phone order","6":"Pending PO","10":"Sales credit","12":"Purchase credit"}}}'
+  recorded_at: Wed, 26 Jan 2022 17:41:03 GMT
+recorded_with: VCR 6.0.0

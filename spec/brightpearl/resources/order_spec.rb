@@ -1,5 +1,7 @@
 # frozen_string_literal: true
 RSpec.describe Brightpearl::Order do
+  let(:example_reference){ "#0001" }
+
   describe "Get order" do
 
     it "returns one sale order" do
@@ -69,7 +71,7 @@ RSpec.describe Brightpearl::Order do
   end # get order
 
   describe "Post" do
-    let(:post_body) {{ reference: "#0001",}}
+    let(:post_body) {{ reference: example_reference,}}
 
     # For SO/SC
     let(:sale_params) do
@@ -170,5 +172,33 @@ RSpec.describe Brightpearl::Order do
     end
 
   end # post order
+
+  describe "Search" do
+    it "returns orders as expected" do
+      VCR.use_cassette("order_search") do
+        response = Brightpearl::Order.search(customerRef: example_reference)
+        expect(response).to include(
+          payload: a_hash_including(
+            "response" => a_hash_including("results" => be_truthy)
+          ),
+          records: include(
+            (an_instance_of(described_class).and having_attributes(id: be_truthy, customer_ref: example_reference)),
+            (an_instance_of(described_class).and having_attributes(id: be_truthy, customer_ref: example_reference)),
+            (an_instance_of(described_class).and having_attributes(id: be_truthy, customer_ref: example_reference)),
+            (an_instance_of(described_class).and having_attributes(id: be_truthy, customer_ref: example_reference)),
+          ),
+          quota_remaining: be_truthy
+        )
+
+        expect(response[:payload]["response"]["results"].size).to eq(response[:records].size)
+      end
+    end
+
+    it "returns error for bad value" do
+      VCR.use_cassette("order_search_bad_param") do
+        expect { Brightpearl::Order.search(orderStatusId: "BAD PARAM") }.to raise_error(an_instance_of(Brightpearl::RequestError).and having_attributes(status: 500, code: "CMNC-018"))
+      end
+    end
+  end # search
 
 end
