@@ -1,16 +1,13 @@
 # frozen_string_literal: true
-
-require_relative "brightpearl/version"
-require_relative 'brightpearl/config'
-require_relative 'brightpearl/errors'
-require_relative 'brightpearl/client'
-require_relative 'brightpearl/resource'
-require_relative 'brightpearl/resources/order'
-require_relative 'brightpearl/resources/order_row'
-require_relative 'brightpearl/resources/product'
-
 require 'httparty'
 require 'uri'
+
+require "brightpearl/version"
+require 'brightpearl/config'
+require 'brightpearl/errors'
+require 'brightpearl/client'
+
+require 'brightpearl/resources'
 
 module Brightpearl
   class Error < StandardError; end
