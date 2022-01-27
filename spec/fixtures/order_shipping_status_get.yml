@@ -1,0 +1,59 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/order-service/order-shipping-status
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Jan 2022 23:20:46 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '256'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-order-shipping-status
+      Ruid:
+      - ff73a508-ec4f-40ca-acb5-384aa4522e74
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '13475'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"id":1,"code":"NST","description":"No stock tracked products
+        on order"},{"id":2,"code":"SNS","description":"Stock not shipped"},{"id":3,"code":"SPS","description":"Stock
+        part shipped"},{"id":4,"code":"ASS","description":"All stock shipped"}]}'
+  recorded_at: Thu, 27 Jan 2022 23:20:46 GMT
+recorded_with: VCR 6.0.0
