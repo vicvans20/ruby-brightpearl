@@ -1,0 +1,100 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/product-service/product-search?productName=Test%20Product
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Jan 2022 22:01:49 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - bulk-data-search
+      Ruid:
+      - 2f5ce4c6-a93e-400a-81ca-8794463a92ea
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '10254'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":{"results":[[1494,"Anthony Test Product","ANTHONY123-BL-3","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1495,"Bundle
+        of 5 Anthony Test Products","BUNDLEANTHONY123","",null,null,null,null,false,"Brightpearl","2020-04-15T09:47:19.000-06:00","2020-04-15T09:48:36.000-06:00",300,null,77,3,"LIVE",366],[1496,"Anthony
+        Test Product","ANTHONY123-BL-4","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1497,"Anthony
+        Test Product","ANTHONY123-BL-5","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1498,"Anthony
+        Test Product","ANTHONY123-BL-6","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1499,"Anthony
+        Test Product","ANTHONY123-BL-7","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1500,"Anthony
+        Test Product","ANTHONY123-R-3","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1501,"Anthony
+        Test Product","ANTHONY123-R-4","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1502,"Anthony
+        Test Product","ANTHONY123-R-5","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1503,"Anthony
+        Test Product","ANTHONY123-R-6","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T18:21:12.000-06:00",300,200,77,3,"LIVE",366],[1504,"Anthony
+        Test Product","ANTHONY123-R-7","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1505,"Anthony
+        Test Product","ANTHONY123-W-3","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1506,"Anthony
+        Test Product","ANTHONY123-W-4","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1507,"Anthony
+        Test Product","ANTHONY123-W-5","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1508,"Anthony
+        Test Product","ANTHONY123-W-6","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1509,"Anthony
+        Test Product","ANTHONY123-W-7","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:34:09.000-06:00",300,200,77,3,"LIVE",366],[1510,"Anthony
+        Test Product","ANTHONY123-B-4","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1511,"Anthony
+        Test Product","ANTHONY123-B-6","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-15T10:39:59.000-06:00",300,200,77,3,"LIVE",366],[1533,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1534,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1535,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1536,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1537,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1538,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1539,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1540,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1541,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1542,"Anthony
+        Test Product","","",null,null,null,null,true,"Brightpearl","2020-04-15T09:12:24.000-06:00","2020-04-22T09:31:39.000-06:00",300,200,77,3,"LIVE",366],[1543,"Test
+        Product BSITC 100X","TESTPROD100","TESTBR1234A",null,null,null,null,true,"Brightpearl","2020-06-19T14:11:46.000-06:00","2020-07-17T07:59:57.000-06:00",302,null,83,1,"LIVE",null],[1544,"Test
+        Product BSITC 200","TESTPROD200","TESTBR1234B",null,null,null,null,true,"Brightpearl","2020-06-23T13:08:21.000-06:00","2020-07-06T12:22:58.000-06:00",302,null,83,1,"LIVE",null],[1545,"Test
+        Product 300","TESTPROD300","TESTBC1234A","TESTBC1234A2","TESTBC1234A1",null,"TESTBC1234A3",true,"Brightpearl","2020-06-24T08:26:40.000-06:00","2020-06-24T13:33:58.000-06:00",302,null,83,1,"LIVE",null],[1546,"Test
+        product 400","TESTPROD400","TESTPROD5001",null,null,null,null,true,"Brightpearl","2020-06-24T14:11:50.000-06:00","2020-06-24T14:12:29.000-06:00",302,null,83,1,"LIVE",null],[1547,"Test
+        Product 111","TESTPROD111","TESTPROD111AA",null,null,null,null,true,"Brightpearl","2020-06-25T06:26:37.000-06:00",null,302,null,83,1,"LIVE",null],[1548,"Test
+        Product 500","TESTPROD500","TESTPROD500123A",null,null,null,null,true,"Brightpearl","2020-06-25T08:44:24.000-06:00",null,302,null,83,1,"LIVE",null],[1549,"Test
+        Product BSITC 800","TESTPROD800","TESTBR1234BC",null,null,null,null,true,"Brightpearl","2020-07-06T12:28:26.000-06:00","2020-07-13T14:05:36.000-06:00",302,null,83,1,"LIVE",389],[1550,"Test
+        Product 600","TESTPROD600","",null,"TESTPROD600123",null,null,true,"Brightpearl","2020-07-08T14:15:41.000-06:00","2020-07-08T14:42:46.000-06:00",302,null,84,1,"LIVE",null],[1551,"Test
+        Product 700","TESTPROD700","",null,"TESTPROD700",null,null,true,"Brightpearl","2020-07-08T16:46:45.000-06:00","2020-07-08T17:48:07.000-06:00",298,null,76,1,"LIVE",null],[1552,"Test
+        Producto 800A","TESTPROD800A","",null,"TESTPROD800A",null,null,true,"Brightpearl","2020-07-08T18:22:04.000-06:00","2020-07-10T10:32:53.000-06:00",297,null,83,1,"LIVE",null],[1553,"Test
+        Product 800B","TESTPROD800B","",null,"TESTPROD800B",null,null,true,"Brightpearl","2020-07-08T19:57:43.000-06:00","2020-07-16T09:48:13.000-06:00",303,null,83,1,"LIVE",212],[1554,"Test
+        Product 800C","TESTPROD800C","",null,"TESTPROD800C",null,null,true,"Brightpearl","2020-07-08T20:59:53.000-06:00","2020-07-17T11:32:37.000-06:00",297,null,83,1,"LIVE",null],[1555,"Test
+        Producto 800D","TESTPROD800D","",null,"TESTPROD800D",null,null,true,"Brightpearl","2020-07-09T09:33:23.000-06:00","2020-07-15T13:52:25.000-06:00",297,null,83,1,"LIVE",331],[1556,"Test
+        Product Barcode from BP to PVX","TESTPROD800E","321321321321",null,null,null,null,true,"Brightpearl","2020-07-11T11:48:47.000-06:00",null,302,null,83,3,"LIVE",null],[1560,"Test
+        Product  BSITC 07","TESTPROD07","ABC1234",null,null,null,null,true,"Brightpearl","2020-07-17T09:05:14.000-06:00","2020-07-17T09:20:19.000-06:00",296,null,83,1,"LIVE",null],[1579,"Test
+        Product","","",null,null,null,null,false,"Brightpearl","2022-01-27T15:58:35.000-06:00","2022-01-27T15:58:35.000-06:00",296,0,74,1,"LIVE",null]],"metaData":{"morePagesAvailable":false,"resultsAvailable":44,"resultsReturned":44,"firstResult":1,"lastResult":44,"columns":[{"name":"productId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":["productCategoryMembership"],"isFreeTextSearchable":false,"required":false},{"name":"productName","sortable":true,"filterable":true,"reportDataType":"SEARCH_STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"SKU","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"barcode","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"EAN","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"UPC","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"ISBN","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"MPN","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"stockTracked","sortable":true,"filterable":true,"reportDataType":"BOOLEAN","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"salesChannelName","sortable":true,"filterable":false,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"createdOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"updatedOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"brightpearlCategoryCode","sortable":false,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"productGroupId","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"brandId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"productTypeId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"productStatus","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"primarySupplierId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false}],"sorting":[{"filterable":{"name":"productId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":["productCategoryMembership"],"isFreeTextSearchable":false,"required":false},"direction":"ASC"}]}},"reference":{"productCategoryMembership":{"1536":[300,301],"1537":[300,301],"1538":[300,301],"1539":[300,301],"1540":[300,301],"1541":[300,301],"1542":[300,301],"1543":[302],"1544":[302],"1545":[302],"1546":[302],"1547":[302],"1548":[302],"1549":[302],"1550":[302],"1551":[298],"1552":[297],"1553":[303],"1554":[297],"1555":[297],"1556":[302],"1494":[300,301],"1495":[300,301],"1496":[300,301],"1560":[296],"1497":[300,301],"1498":[300,301],"1499":[300,301],"1500":[300,301],"1501":[300,301],"1502":[300,301],"1503":[300,301],"1504":[300,301],"1505":[300,301],"1506":[300,301],"1507":[300,301],"1508":[300,301],"1509":[300,301],"1510":[300,301],"1511":[300,301],"1579":[296],"1533":[300,301],"1534":[300,301],"1535":[300,301]}}}'
+  recorded_at: Thu, 27 Jan 2022 22:01:49 GMT
+recorded_with: VCR 6.0.0

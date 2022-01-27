@@ -1,0 +1,60 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://ws-use.brightpearl.com/public-api/barulu/product-service/product
+    body:
+      encoding: UTF-8
+      string: '{"brandId":74,"financialDetails":{"taxable":true,"taxCode":{"id":2,"code":"T"}},"salesChannels":[{"salesChannelName":"Brightpearl","productName":"Test
+        Product","categories":[{"categoryCode":296}]}]}'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Jan 2022 21:58:36 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '17'
+      Connection:
+      - keep-alive
+      Message-Type:
+      - post-product
+      Ruid:
+      - efce70c2-343d-45ed-a085-e959d157cae9
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '24081'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":1579}'
+  recorded_at: Thu, 27 Jan 2022 21:58:36 GMT
+recorded_with: VCR 6.0.0

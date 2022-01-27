@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/product-service/product/1007
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Jan 2022 21:48:41 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '1126'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - product-get
+      Ruid:
+      - 0125a3d8-8d01-443e-a466-5d1415fa2b41
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '18664'
+      Brightpearl-Requests-Remaining:
+      - '196'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"id":1007,"brandId":74,"productTypeId":1,"identity":{"sku":"TEST001","barcode":""},"featured":false,"stock":{"stockTracked":true,"weight":{"magnitude":0.0000},"dimensions":{"length":0.00,"height":0.00,"width":0.00,"volume":0.00}},"financialDetails":{"taxable":false,"taxCode":{"id":2,"code":"T"}},"salesChannels":[{"salesChannelName":"Brightpearl","productName":"Nice
+        Shirt for Summer","productCondition":"new","categories":[{"categoryCode":"296"}],"description":{"languageCode":"en","text":"","format":"HTML_FRAGMENT"},"shortDescription":{"languageCode":"en","text":"","format":"HTML_FRAGMENT"}}],"composition":{"bundle":false},"createdOn":"2020-03-31T14:58:29.000-06:00","updatedOn":"2020-07-06T01:48:36.000-06:00","warehouses":{"2":{"defaultLocationId":0,"overflowLocationId":0,"reorderLevel":0,"reorderQuantity":0},"3":{"defaultLocationId":0,"overflowLocationId":0,"reorderLevel":0,"reorderQuantity":0}},"nominalCodeStock":"1001","nominalCodePurchases":"5000","nominalCodeSales":"4000","seasonIds":[],"reporting":{},"status":"LIVE","salesPopupMessage":"","warehousePopupMessage":"","version":1594021716000}]}'
+  recorded_at: Thu, 27 Jan 2022 21:48:41 GMT
+recorded_with: VCR 6.0.0
