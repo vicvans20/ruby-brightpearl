@@ -40,8 +40,9 @@ module Brightpearl
 
       if response.code == 503 # Unavailable MOST likeyly throttled
         raise Brightpearl::Throttled.new("Throttled", response: json, status: response.code)
-      end
-      if !!json["errors"]
+      elsif response.code == 401
+        raise Brightpearl::InvalidToken.new(json["response"], response: json, status: 401)
+      elsif !!json["errors"]
         raise Brightpearl::RequestError.new("Request Error",  response: json, status: response.code)
       end
 

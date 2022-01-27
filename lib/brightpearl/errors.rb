@@ -9,14 +9,24 @@ module Brightpearl
       else
         super(msg)
       end
-      # puts @code
+      puts @code
+      puts error
       @response = response
       @status = status
     end
   end
 
   class Throttled < StandardError
-    attr_reader :response, :code
+    attr_reader :response, :code, :status
+    def initialize(msg, response: nil, status: nil)
+      super(msg)
+      @response = response
+      @status = status
+    end
+  end
+  
+  class InvalidToken < StandardError
+    attr_reader :response, :status
     def initialize(msg, response: nil, status: nil)
       super(msg)
       @response = response
