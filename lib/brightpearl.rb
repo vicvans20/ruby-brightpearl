@@ -7,6 +7,7 @@ require 'brightpearl/config'
 require 'brightpearl/errors'
 require 'brightpearl/client'
 
+require 'brightpearl/api_operations'
 require 'brightpearl/resources'
 
 module Brightpearl

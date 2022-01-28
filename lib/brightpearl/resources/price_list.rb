@@ -1,11 +1,12 @@
 module Brightpearl
   class PriceList < Resource
-
+    extend Brightpearl::APIOperations::Get
     class << self
-      # https://api-docs.brightpearl.com/product/price-list/get.html
-      def get(id)
-        send_request(path: "product-service/price-list/#{id}", method: :get)
+      def resource_path
+        "product-service/price-list"
       end
+      
+      # https://api-docs.brightpearl.com/product/price-list/get.html
 
     end
   end

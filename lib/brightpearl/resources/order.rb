@@ -1,5 +1,10 @@
 module Brightpearl
   class Order < Resource
+    extend Brightpearl::APIOperations::Get
+    extend Brightpearl::APIOperations::Post
+    extend Brightpearl::APIOperations::Patch
+    extend Brightpearl::APIOperations::Options
+
     attr_accessor :id, :order_type_id, :contact_id, :order_status_id, :order_stock_status_id,
                   :created_on, :created_by_id,
                   :customer_ref, :order_payment_status_id, :updated_on,
@@ -8,27 +13,15 @@ module Brightpearl
                   :tax_date, :department_id, :delivery_date
 
     class << self
-      # https://api-docs.brightpearl.com/order/order/get.html
-      def get(id_set, query_params = nil)
-        url = "order-service/order/#{id_set}"
-        url = "#{url}?#{to_query(query_params)}" if query_params
-        send_request(path: url)
-      end
-  
-      # https://api-docs.brightpearl.com/order/order/post.html
-      def post(params)
-        send_request(path: "order-service/order", method: :post, body: params)
-      end
-  
-      # https://api-docs.brightpearl.com/order/order/patch.html
-      def patch(id, params)
-        send_request(path: "order-service/order/#{id}", method: :patch, body: params)
+      def resource_path
+        "order-service/order"
       end
 
+      # https://api-docs.brightpearl.com/order/order/get.html
+      # https://api-docs.brightpearl.com/order/order/post.html
+      # https://api-docs.brightpearl.com/order/order/patch.html
       # https://api-docs.brightpearl.com/order/order/options.html
-      def options(id_set)
-        send_request(path: "order-service/order/#{id_set}", method: :options)
-      end
+    
   
       # https://api-docs.brightpearl.com/order/order/search.html
       def search(query_params = {})

@@ -1,5 +1,10 @@
 module Brightpearl
   class Product < Resource
+    extend Brightpearl::APIOperations::Get
+    extend Brightpearl::APIOperations::Post
+    extend Brightpearl::APIOperations::Put
+    extend Brightpearl::APIOperations::Options
+
     attr_accessor :id, :product_name, :sku, :barcode,
                   :ean, :upc, :isbn, :mpn, 
                   :stock_tracked, :sales_channel_name, :created_on, :updated_on,
@@ -7,27 +12,14 @@ module Brightpearl
                   :product_type_id, :product_status, :primary_supplier_id
 
     class << self
+      def resource_path
+        "product-service/product"
+      end
+      
       # https://api-docs.brightpearl.com/product/product/get.html
-      def get(id_set, query_params = nil)
-        url = "product-service/product/#{id_set}"
-        url = "#{url}?#{to_query(query_params)}" if query_params
-        send_request(path: url)
-      end
-  
       # https://api-docs.brightpearl.com/product/product/post.html
-      def post(params)
-        send_request(path: "product-service/product", method: :post, body: params)
-      end
-  
       # https://api-docs.brightpearl.com/product/product/put.html
-      def put(id, params)
-        send_request(path: "product-service/product/#{id}", method: :put, body: params)
-      end
-
       # https://api-docs.brightpearl.com/product/product/options.html
-      def options(id_set)
-        send_request(path: "product-service/product/#{id_set}", method: :options)
-      end
   
       # https://api-docs.brightpearl.com/product/product/search.html
       def search(query_params = {})
