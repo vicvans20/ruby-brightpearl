@@ -1,0 +1,58 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/product-service/price-list/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Jan 2022 17:00:02 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '208'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-price-list
+      Ruid:
+      - e188796c-1b1f-4e47-aba5-a511e7463100
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '58164'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXNwb25zZSI6W3siaWQiOjEsIm5hbWUiOnsibGFuZ3VhZ2VDb2RlIjoiZW4iLCJ0ZXh0IjoiQ29zdCBDUkMiLCJmb3JtYXQiOiJQTEFJTlRFWFQifSwiY29kZSI6IkNPU1QgQ1JDIiwiY3VycmVuY3lDb2RlIjoiQ1JDIiwiY3VycmVuY3lTeW1ib2wiOiLigqEiLCJjdXJyZW5jeUlkIjo1LCJwcmljZUxpc3RUeXBlQ29kZSI6IkJVWSIsImdyb3NzIjpmYWxzZX1dfQ==
+  recorded_at: Fri, 28 Jan 2022 17:00:02 GMT
+recorded_with: VCR 6.0.0
