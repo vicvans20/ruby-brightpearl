@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: options
+    uri: https://ws-use.brightpearl.com/public-api/barulu/product-service/product-price/1-100,320,321
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Jan 2022 21:50:13 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '27'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - options-product-price
+      Ruid:
+      - b53ce9ab-2f0f-4d94-ba00-eb62a81a3686
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '46839'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":{"getUris":[]}}'
+  recorded_at: Fri, 28 Jan 2022 21:50:13 GMT
+recorded_with: VCR 6.0.0

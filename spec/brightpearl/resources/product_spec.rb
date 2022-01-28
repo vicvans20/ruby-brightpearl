@@ -134,7 +134,7 @@ RSpec.describe Brightpearl::Product do
         # TODO
       end
     end
-  end # PATCH
+  end # PUT
 
   describe "OPTIONS" do
     it "returns uris of requested products" do

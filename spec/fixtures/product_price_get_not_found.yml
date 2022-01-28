@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/product-service/product-price/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Fri, 28 Jan 2022 21:42:54 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '68'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-product-price
+      Ruid:
+      - 1aebb42f-066b-4442-a3a0-ff0392f32669
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '5598'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":"CMNC-404","message":"No Product Prices Found"}]}'
+  recorded_at: Fri, 28 Jan 2022 21:42:54 GMT
+recorded_with: VCR 6.0.0

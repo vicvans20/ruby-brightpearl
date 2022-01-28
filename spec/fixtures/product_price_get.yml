@@ -1,0 +1,57 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/product-service/product-price/1007
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 28 Jan 2022 21:45:48 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '353'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-product-price
+      Ruid:
+      - 36bd1b23-4255-44a6-9a63-1b5f541c4842
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '11778'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"productId":1007,"priceLists":[{"priceListId":1,"currencyCode":"CRC","currencyId":5,"quantityPrice":{"1":"10.0000"}},{"priceListId":2,"currencyCode":"CRC","currencyId":5,"quantityPrice":{}},{"priceListId":3,"currencyCode":"CRC","currencyId":5,"quantityPrice":{}},{"priceListId":4,"currencyCode":"USD","currencyId":1,"quantityPrice":{}}]}]}'
+  recorded_at: Fri, 28 Jan 2022 21:45:48 GMT
+recorded_with: VCR 6.0.0
