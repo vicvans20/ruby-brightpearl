@@ -1,9 +1,10 @@
 # Brightpearl
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/brightpearl`. To experiment with that code, run `bin/console` for an interactive prompt.
+The Brightpearl gem allows Ruby developers to access the Brightpearl API resources for instance confidential apps.
 
-TODO: Delete this and the text above, and describe your gem
+The Brightpearl API is implemented as a REST API JSON interface, using various HTTP verbs such as: GET/POST/PUT/PATCH/OPTIONS/DELETE. Each resource, like Order, Product, or Contact, has different operations available.
 
+To read more, follow the link to the official documentation: https://api-docs.brightpearl.com/
 ## Installation
 
 Add this line to your application's Gemfile:
@@ -22,7 +23,81 @@ Or install it yourself as:
 
 ## Usage
 
-TODO: Write usage instructions here
+### Requirements
+
+All API usage happens through brightpearl applications, created by developers for private usage or for use by other brightpearl site owners:
+
+A brightpearl developer account is required to begin the development of apps, to read more info about the account creation refer to: https://help.brightpearl.com/hc/en-us/articles/211124886-Register-as-a-Brightpearl-developer
+
+Once an account is provided, developers can create applications through the official portal of brightpearl applications: https://developer.brightpearl.com/
+
+### Usage
+
+#### 1) Create an app
+
+Using the official portal create a new application, the type must be `instance`, once the app has been created an "application ID" and "secret" should be provided.
+
+#### 2) Requesting access for a brightpearl account
+
+Start by setting up the initial configuration for the client:
+```ruby
+Brightpearl.config.account =      ACCOUNT # From developer account creation
+Brightpearl.config.dev_ref =      DEV_REF # From developer account creation
+
+Brightpearl.config.app_ref =      APP_REF # Brightpearl app ID
+Brightpearl.config.app_secret =   APP_REF # Brightpearl app secret
+
+Brightpearl.config.oauth_redirect_url = OAUTH_REDIRECT_URL # Brightpearl app authorized redirect url
+```
+
+Before the API calls can be performed you will need to get a token, to get one the authentication flow must be followed as per brightpearl documentation: https://help.brightpearl.com/hc/en-us/articles/360032240811-Set-up-the-Authorization-Code-Grant-flow
+
+The oauth URL can be then generated with:
+```ruby
+Brightpearl::Auth.oauth_url("random-passcode") # => "https://oauth.brightpearl.com/authorize/testAccount?response_type=code&client_id=testAppName&redirect_uri=https://2f826695ec8a.ngrok.io/oauth&state=random-passcode
+```
+NOTE: The argument on `oauth_url` is the state, this should be a non guessable string that the authorization server will pass back to you on redirection which you should check against to prevent CSRF attacks
+
+#### 3) Trading your `auth code` for an access token.
+
+The oauth process will return an url with a param called `code`, the value of this parameter is a temporary token that the app can exchange for an access token.
+
+This can be done by calling:
+
+```ruby
+Brightpearl::Auth.request_token(AUTH_TOKEN) # => { token: "XXX", refresh_token: "XYZ", api_domain: "ws-use.brightpearl.com" }
+```
+
+After the token is obtained it can be added to client by setting it on the config:
+```ruby
+Brightpearl.config.api_domain = API_DOMAIN # Such as ws-use.brightpearl.com
+Brightpearl.config.token = TOKEN
+```
+
+Token has a expiration time, when the token has expired a new one can be obtained using the refresh token.
+ 
+ #### 4) Making requests
+Responses to REST requests are parsed into a hash with the keys `:payload` with the actual response from brightpearl API and `:quota_remaining` with the value of the current quota.
+
+NOTE: Search operations returns a Ruby object for the resource as well for easier access to the attributes, this is returned in the `:records` key on the result.
+
+```ruby
+result = Brightpearl::Order.get(1)
+
+order = result[:payload]["response"].first
+puts order["id"] # => 1
+puts order["orderTypeCode"] # => "SO"
+```
+
+Brightpearl API allows for multiple items to be requested at once on most resources:
+```ruby
+product_ids = [1, 2, 3]
+result = Brightpearl::Product.get(product_ids.join(","))
+puts result[:payload]["response"].size # => 3
+```
+
+NOTE: For more information about brightpearl API syntax refer to: https://help.brightpearl.com/hc/en-us/articles/212645003-URI-syntax
+
 
 ## Development
 
