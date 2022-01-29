@@ -1,5 +1,6 @@
 module Brightpearl
   class Client
+    # attr_accessor :token
     def self.send_request(path:, method: :get, **options )
       headers = {
         "brightpearl-app-ref": "#{Brightpearl.config.app_ref}",
@@ -54,7 +55,7 @@ module Brightpearl
     end
 
     def self.base_url
-      "https://#{Brightpearl.config.api_url_base}/public-api/#{Brightpearl.config.account}"; 
+      "https://#{Brightpearl.config.api_domain}/public-api/#{Brightpearl.config.account}"; 
     end
 
   end

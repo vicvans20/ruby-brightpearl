@@ -6,6 +6,7 @@ require "brightpearl/version"
 require 'brightpearl/config'
 require 'brightpearl/errors'
 require 'brightpearl/client'
+require 'brightpearl/auth'
 
 require 'brightpearl/api_operations'
 require 'brightpearl/resources'
