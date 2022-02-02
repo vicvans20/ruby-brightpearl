@@ -41,6 +41,8 @@ Using the official portal create a new application, the type must be `instance`,
 
 Start by setting up the initial configuration for the client:
 ```ruby
+require 'brightpearl'
+
 Brightpearl.config.account =      ACCOUNT # Account to request API access
 Brightpearl.config.dev_ref =      DEV_REF # From developer account creation
 
