@@ -25,4 +25,14 @@ RSpec.describe Brightpearl::Client do
       expect { response = Brightpearl::Product.get(1) }.to raise_error(Brightpearl::InvalidToken)
     end
   end
+
+  it "Use a temporal token successfully" do
+    VCR.use_cassette("order_get_one") do
+      Brightpearl::Client.temp(token: "F9yhblu8n5jweUTrL+QgGe8DQwx/f8wN+78cdNAQ0A=") do 
+        response = Brightpearl::Order.get(1)
+        expect(response).to include(payload: be_truthy)
+      end
+    end
+  end
+
 end

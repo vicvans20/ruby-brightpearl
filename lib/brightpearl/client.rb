@@ -1,6 +1,16 @@
 module Brightpearl
   class Client
-    # attr_accessor :token
+    # Send a request using a different token than the global config. (Useful when using a different token for specific calls)
+    def self.temp(token:, &block)
+      original_token = Brightpearl.config.token
+      begin
+        Brightpearl.config.token = token
+        yield
+      ensure
+        Brightpearl.config.token = original_token
+      end
+    end
+
     def self.send_request(path:, method: :get, **options )
       headers = {
         "brightpearl-app-ref": "#{Brightpearl.config.app_ref}",
