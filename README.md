@@ -41,31 +41,29 @@ Using the official portal create a new application, the type must be `instance`,
 
 Start by setting up the initial configuration for the client:
 ```ruby
-Brightpearl.config.account =      ACCOUNT # From developer account creation
+Brightpearl.config.account =      ACCOUNT # Account to request API access
 Brightpearl.config.dev_ref =      DEV_REF # From developer account creation
 
 Brightpearl.config.app_ref =      APP_REF # Brightpearl app ID
 Brightpearl.config.app_secret =   APP_REF # Brightpearl app secret
-
-Brightpearl.config.oauth_redirect_url = OAUTH_REDIRECT_URL # Brightpearl app authorized redirect url
 ```
 
 Before the API calls can be performed you will need to get a token, to get one the authentication flow must be followed as per brightpearl documentation: https://help.brightpearl.com/hc/en-us/articles/360032240811-Set-up-the-Authorization-Code-Grant-flow
 
 The oauth URL can be then generated with:
 ```ruby
-Brightpearl::Auth.oauth_url("random-passcode") # => "https://oauth.brightpearl.com/authorize/testAccount?response_type=code&client_id=testAppName&redirect_uri=https://2f826695ec8a.ngrok.io/oauth&state=random-passcode
+Brightpearl::Auth.oauth_url(state: "random-passcode", redirect_uri: "https://www.something.io/oauth") # => "https://oauth.brightpearl.com/authorize/testAccount?response_type=code&client_id=testAppName&redirect_uri=https://www.something.io/oauth&state=random-passcode
 ```
-NOTE: The argument on `oauth_url` is the state, this should be a non guessable string that the authorization server will pass back to you on redirection which you should check against to prevent CSRF attacks
+NOTE: The state argument on `oauth_url` method is a string defined by yourself, this should be a non guessable string that the authorization server will pass back to you on redirection which you should check against to prevent CSRF attacks
 
 #### 3) Trading your `auth code` for an access token.
 
-The oauth process will return an url with a param called `code`, the value of this parameter is a temporary token that the app can exchange for an access token.
+The oauth process will redirect to your `redirect_uri` with a param called `code`, the value of this parameter is a temporary token that the app can exchange for an access token.
 
-This can be done by calling:
+This process be done by:
 
 ```ruby
-Brightpearl::Auth.request_token(AUTH_TOKEN) # => { token: "XXX", refresh_token: "XYZ", api_domain: "ws-use.brightpearl.com" }
+Brightpearl::Auth.request_token(auth_token: AUTH_TOKEN, redirect_uri: "https://www.something.io/oauth") # => { token: "XXX", refresh_token: "XYZ", api_domain: "ws-use.brightpearl.com" }
 ```
 
 After the token is obtained it can be added to client by setting it on the config:
@@ -74,7 +72,9 @@ Brightpearl.config.api_domain = API_DOMAIN # Such as ws-use.brightpearl.com
 Brightpearl.config.token = TOKEN
 ```
 
-Token has a expiration time, when the token has expired a new one can be obtained using the refresh token.
+NOTES: 
+* The token has a expiration time, when the token has expired a new one can be obtained using a refresh token.
+* The redirect_uri used on `request_token` should be the same used on `oauth_url`
  
  #### 4) Making requests
 Responses to REST requests are parsed into a hash with the keys `:payload` with the actual response from brightpearl API and `:quota_remaining` with the value of the current quota.

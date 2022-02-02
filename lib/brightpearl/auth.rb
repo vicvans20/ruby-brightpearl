@@ -1,17 +1,17 @@
 module Brightpearl
   class Auth
-    def self.oauth_url(state)
-      "https://oauth.brightpearl.com/authorize/#{Brightpearl.config.account}?response_type=code&client_id=#{Brightpearl.config.app_ref}&redirect_uri=#{Brightpearl.config.oauth_redirect_url}&state=#{state}"
+    def self.oauth_url(state:, redirect_uri:)
+      "https://oauth.brightpearl.com/authorize/#{Brightpearl.config.account}?response_type=code&client_id=#{Brightpearl.config.app_ref}&redirect_uri=#{redirect_uri}&state=#{state}"
     end
 
-    def self.request_token(auth_token)
+    def self.request_token(auth_token:, redirect_uri:)
       token_endpoint = "https://oauth.brightpearl.com/token/#{Brightpearl.config.account}"
       body = {
         grant_type: "authorization_code",
         code: auth_token,
         client_id: Brightpearl.config.app_ref,
         client_secret: Brightpearl.config.app_secret,
-        redirect_uri: Brightpearl.config.oauth_redirect_url
+        redirect_uri: redirect_uri, # SAME AS THE ONE USED ON oauth_url
       }
 
       response = HTTParty.post(token_endpoint, 

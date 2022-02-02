@@ -12,15 +12,15 @@ VCR.configure do |config|
   # end
 
   config.filter_sensitive_data('<APP-REF>') do |interaction|
-    interaction.request.headers['Brightpearl-App-Ref'].first
+    interaction.request.headers['Brightpearl-App-Ref'] && interaction.request.headers['Brightpearl-App-Ref'].first
   end
 
   config.filter_sensitive_data('<DEV-REF>') do |interaction|
-    interaction.request.headers['Brightpearl-Dev-Ref'].first
+    interaction.request.headers['Brightpearl-Dev-Ref'] && interaction.request.headers['Brightpearl-Dev-Ref'].first
   end
 
   config.filter_sensitive_data('<Bearer TOKEN>') do |interaction|
-    interaction.request.headers['Authorization'].first
+    interaction.request.headers['Authorization'] && interaction.request.headers['Authorization'].first
   end
 end
 

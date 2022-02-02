@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://oauth.brightpearl.com/token/barulu
+    body:
+      encoding: UTF-8
+      string: grant_type=authorization_code&code=a4814ccf-5efa-4635-8ba5-8c47d562fcd8&client_id=clientID&client_secret=xxxxxx&redirect_uri=https%3A%2F%2F0486-170-246-154-186.ngrok.io%2Fbrightpearl_oauth_redirect
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Charset:
+      - utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Tue, 01 Feb 2022 23:13:54 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '238'
+      Connection:
+      - keep-alive
+      Vary:
+      - X-Forwarded-Proto
+      Cache-Control:
+      - no-cache, private
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"6wxzeP2zmvtyHxx0nNUAp8JOMEp+VlGHjZvstab7ak8=","refresh_token":"R89F7gGrUD5cD1aDmTingUbhuHmsj4po9JjGPJKaOQA=","installation_instance_id":"13","api_domain":"ws-use.brightpearl.com","token_type":"Bearer","expires_in":604800}'
+  recorded_at: Tue, 01 Feb 2022 23:13:54 GMT
+recorded_with: VCR 6.0.0
