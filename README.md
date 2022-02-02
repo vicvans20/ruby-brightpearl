@@ -63,7 +63,7 @@ The oauth process will redirect to your `redirect_uri` with a param called `code
 This process be done by:
 
 ```ruby
-Brightpearl::Auth.request_token(auth_token: AUTH_TOKEN, redirect_uri: "https://www.something.io/oauth") # => { token: "XXX", refresh_token: "XYZ", api_domain: "ws-use.brightpearl.com" }
+Brightpearl::Auth.request_token(auth_token: AUTH_TOKEN, redirect_uri: "https://www.something.io/oauth") # => { payload: { "access_token" => "XXX", "refresh_token" => "XYZ", "api_domain" => "ws-use.brightpearl.com" } }
 ```
 
 After the token is obtained it can be added to client by setting it on the config:

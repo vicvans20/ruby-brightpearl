@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://oauth.brightpearl.com/token/barulu
+    body:
+      encoding: UTF-8
+      string: grant_type=authorization_code&code=a4814ccf-5efa-4635-8ba5-8c47d562fcd8&client_id=clientID&client_secret=xxxxxx&redirect_uri=https%3A%2F%2F0486-170-246-154-186.ngrok.io%2Fbrightpearl_oauth_redirect
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Charset:
+      - utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Wed, 02 Feb 2022 16:18:39 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '26'
+      Connection:
+      - keep-alive
+      Vary:
+      - X-Forwarded-Proto
+      Cache-Control:
+      - no-cache, private
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"error":"invalid_client"}'
+  recorded_at: Wed, 02 Feb 2022 16:18:39 GMT
+recorded_with: VCR 6.0.0

@@ -21,12 +21,16 @@ module Brightpearl
           'charset' => 'utf-8'
         }
       )
-      data = JSON.parse(response.body)
+      json = JSON.parse(response.body)
+      raise Brightpearl::RequestError.new(json["error_description"] || json["error"], response: json, status: 400) if response.code == 400
 
       return {
-        token: data["access_token"],
-        refresh_token: data["refresh_token"],
-        api_domain: data["api_domain"],
+        payload: json,
+        data: {
+          token: json["access_token"],
+          refresh_token: json["refresh_token"],
+          api_domain: json["api_domain"],
+        }
       }
     end
   end
