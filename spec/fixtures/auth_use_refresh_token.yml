@@ -1,0 +1,43 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://oauth.brightpearl.com/token/barulu
+    body:
+      encoding: UTF-8
+      string: grant_type=refresh_token&refresh_token=A1iWFfpSuQADO7895Y4eJDv42ZzIDvD0oOhHNIFM0Po%3D&client_id=cliendID
+    headers:
+      Content-Type:
+      - application/x-www-form-urlencoded
+      Charset:
+      - utf-8
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 02 Feb 2022 18:15:29 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '206'
+      Connection:
+      - keep-alive
+      Vary:
+      - X-Forwarded-Proto
+      Cache-Control:
+      - no-cache, private
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"access_token":"NfMW6Sx1koth7YLhmSWT3R1Q7PmT6SnFf6ihkpXw42I=","refresh_token":"A2iWFfpSuQADO7895Y4eJDv42ZzIDvD0oOhHNIFM0Po=","api_domain":"ws-use.brightpearl.com","token_type":"Bearer","expires_in":537227}'
+  recorded_at: Wed, 02 Feb 2022 18:15:29 GMT
+recorded_with: VCR 6.0.0

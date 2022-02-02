@@ -58,7 +58,7 @@ Brightpearl::Auth.oauth_url(state: "random-passcode", redirect_uri: "https://www
 ```
 NOTE: The state argument on `oauth_url` method is a string defined by yourself, this should be a non guessable string that the authorization server will pass back to you on redirection which you should check against to prevent CSRF attacks
 
-#### 3) Trading your `auth code` for an access token.
+#### 3) Trading your `code` for an access token.
 
 The oauth process will redirect to your `redirect_uri` with a param called `code`, the value of this parameter is a temporary token that the app can exchange for an access token.
 
@@ -72,12 +72,24 @@ After the token is obtained it can be added to client by setting it on the confi
 ```ruby
 Brightpearl.config.api_domain = API_DOMAIN # Such as ws-use.brightpearl.com
 Brightpearl.config.token = TOKEN
+Brightpearl.config.refresh_token = REFRESH_TOKEN
 ```
 
 NOTES: 
 * The token has a expiration time, when the token has expired a new one can be obtained using a refresh token.
 * The redirect_uri used on `request_token` should be the same used on `oauth_url`
- 
+
+#### 3A) Using the refresh token to get a new access token
+
+When the token has expired, the `use_refresh_token` method can be used:
+```ruby
+Brightpearl::Auth.use_refresh_token(refresh_token: "XXX")
+# If refresh_token is loaded on config just call the method
+Brightpearl::Auth.use_refresh_token()
+```
+
+The return value is the same as `request_token`, additionally by default the new `token` and `refresh_token` are loaded on `Brightpearl.config`, if for some reason this is undesired it can be turned off by calling the method as `Brightpearl::Auth.use_refresh_token(autoupdate: false)`
+
  #### 4) Making requests
 Responses to REST requests are parsed into a hash with the keys `:payload` with the actual response from brightpearl API and `:quota_remaining` with the value of the current quota.
 

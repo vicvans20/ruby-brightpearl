@@ -11,6 +11,6 @@ module Brightpearl
     # Based on authentication process
     attr_accessor :token              # API token
     attr_accessor :api_domain         # API URL base. Depends on instance region. Obtained after auth process
-    # attr_accessor :refresh_token
+    attr_accessor :refresh_token      # API refresh token
   end 
 end 
