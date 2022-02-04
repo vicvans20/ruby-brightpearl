@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    ruby-brightpearl (0.2.0)
+    ruby-brightpearl (0.3.0)
       httparty (~> 0.20)
 
 GEM

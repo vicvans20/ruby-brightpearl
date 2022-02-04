@@ -1,5 +1,7 @@
 ## [Unreleased]
 
+## [0.3.0] - 2022-02-03
+- New resource ProductAvailability
 ## [0.2.0] - 2022-02-02
 - Add refresh token mechanic with method `use_refresh_token`
 - Change config values
