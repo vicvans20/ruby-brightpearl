@@ -1,0 +1,62 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/barulu/accounting-service/tax-code/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 09 Feb 2022 00:26:34 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '615'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-tax-code
+      Ruid:
+      - b90db22e-ddba-4171-a933-73eb95dd67c0
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '11'
+      Brightpearl-Next-Throttle-Period:
+      - '25865'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":[{"id":1,"code":"Z","description":"Exempt"},{"id":2,"code":"T","description":"Taxable","rate":10.0000},{"id":3,"code":"N","description":"Non
+        Taxable"},{"id":4,"code":"VAT","description":"VAT","rate":13.0000},{"id":5,"code":"IVA","description":"IVA
+        10%","rate":10.0000},{"id":6,"code":"IV2","description":"IVA 2%","rate":2.0000},{"id":8,"code":"T13","description":"tax
+        tax tax","rate":13.0000},{"id":9,"code":"13","description":"IVA 13%","rate":13.0000},{"id":10,"code":"I1","description":"IVA
+        1%"},{"id":11,"code":"I2","description":"IVA 2%","rate":2.0000},{"id":12,"code":"I0","description":"IVA
+        0%"}]}'
+  recorded_at: Wed, 09 Feb 2022 00:26:34 GMT
+recorded_with: VCR 6.0.0

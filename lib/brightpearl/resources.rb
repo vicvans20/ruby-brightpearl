@@ -8,3 +8,5 @@ require 'brightpearl/resources/product'
 require 'brightpearl/resources/product_price'
 require 'brightpearl/resources/price_list'
 require 'brightpearl/resources/product_availability'
+# Accounting
+require 'brightpearl/resources/tax_code'
