@@ -9,8 +9,6 @@ module Brightpearl
       else
         super(msg)
       end
-      puts @code
-      puts error
       @response = response
       @status = status
     end

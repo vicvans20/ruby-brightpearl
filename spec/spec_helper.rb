@@ -42,5 +42,7 @@ RSpec.configure do |config|
     Brightpearl.config.account =      ENV["RUBY_BRIGHTPEARL_ACCOUNT"]
 
     Brightpearl.config.token =        ENV["RUBY_BRIGHTPEARL_TOKEN"] # It expires
+
+    Brightpearl.config.debug_mode =   true # Extra logs
   end
 end

@@ -46,7 +46,7 @@ module Brightpearl
         puts "Unrecognized http method"
       end
 
-      puts url
+      puts url if Brightpearl.config.debug_mode
       json = JSON.parse(response.body)
 
       if response.code == 503 # Unavailable MOST likeyly throttled
