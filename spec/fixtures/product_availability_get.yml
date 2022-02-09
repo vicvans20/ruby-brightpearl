@@ -2,7 +2,7 @@
 http_interactions:
 - request:
     method: get
-    uri: https://ws-use.brightpearl.com/public-api/barulu/warehouse-service/product-availability//1007,1532
+    uri: https://ws-use.brightpearl.com/public-api/barulu/warehouse-service/product-availability/1007,1532
     body:
       encoding: US-ASCII
       string: ''

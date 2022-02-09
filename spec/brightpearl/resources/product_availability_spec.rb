@@ -5,7 +5,7 @@ RSpec.describe Brightpearl::ProductAvailability do
 
   describe "GET" do
     it "get availability of one product" do
-      VCR.use_cassette("price_availability_get") do
+      VCR.use_cassette("product_availability_get") do
         response = Brightpearl::ProductAvailability.get("#{product_id},#{product_id_2}")
         expect(response).to include(
           payload: a_hash_including(
