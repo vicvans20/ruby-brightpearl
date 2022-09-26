@@ -35,4 +35,11 @@ RSpec.describe Brightpearl::Client do
     end
   end
 
+  it "raises error when request fails with search query" do
+    VCR.use_cassette("client/search_error") do
+      Brightpearl.config.token = "ueHd8764HcvzKsSIjo28RZna6+91EDDuYnF47kP1DCE=" # Invalid/Expired token
+      expect { response = Brightpearl::Product.search(SKU: "XXX") }.to raise_error(Brightpearl::InvalidToken)
+    end
+  end
+
 end
