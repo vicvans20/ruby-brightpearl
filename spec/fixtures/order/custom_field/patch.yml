@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://euw1.brightpearlconnect.com/public-api/<ACCOUNT>/order-service/order/516491/custom-field
+    body:
+      encoding: UTF-8
+      string: '[{"op":"add","path":"/PCF_REICUOTA","value":{"id":137}}]'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 27 Mar 2025 23:18:53 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - patch-custom-fields
+      Ruid:
+      - 21942562-2156-4a0a-b4ae-482d2b9e4b77
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '6719'
+      Brightpearl-Requests-Remaining:
+      - '197'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=1wMwkSaEjW2oWJXPLwknJufd11qedBUxWoTwfhgmacY-1743117533-1.0.1.1-BuAwruo.1T0oKPETx8LlECnuh3vd7dlt8_ogqRn17PeuVtdOoAwJCFIVv1tcja4mrVOyqWAL8Xz.kyPoZhxvzVdJfHH84HWTG1_XUDbBTIM;
+        path=/; expires=Thu, 27-Mar-25 23:48:53 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 92729c050d4cb25a-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"PCF_REICUOTA":{"id":137,"value":"FormularioBAC"},"PCF_ETAORIG":"2023-03-06
+        17:22:26 -0600","PCF_ZONA":{"id":64,"value":"SJ.1"},"PCF_MENSAJER":"Pablo
+        Pandilla  (GN#516491/01)","PCF_FECHADE":"2023-03-06 15:00:44 -0600 (GN#516491/01)","PCF_TEAM":"Team A"}}'
+  recorded_at: Thu, 27 Mar 2025 23:18:53 GMT
+recorded_with: VCR 6.0.0
