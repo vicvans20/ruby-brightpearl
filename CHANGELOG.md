@@ -1,5 +1,9 @@
 ## [Unreleased]
 
+## [0.5.0]
+- Add new resource OrderCustomField
+- Improve test environment to use different bp credentials without breaking the cassettes
+
 ## [0.3.0] - 2022-02-03
 - New resource TaxCode
 - Fix minor typos

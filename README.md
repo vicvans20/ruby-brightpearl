@@ -119,6 +119,30 @@ After checking out the repo, run `bin/setup` to install dependencies. Then, run 
 
 To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
 
+## Testing
+
+Before you can you tests, you have to setup some env variables:
+* RUBY_BRIGHTPEARL_ENDPOINT: The API endpoint to use, e.g. https://ws-use.brightpearl.com
+* RUBY_BRIGHTPEARL_APP_REF: The app ref to use, e.g. barulu
+* RUBY_BRIGHTPEARL_DEV_REF: The dev ref to use, e.g. barulu
+* RUBY_BRIGHTPEARL_ACCOUNT: The account to use, e.g. barulu
+* RUBY_BRIGHTPEARL_TOKEN: The token to use, e.g. barulu
+
+You have to fetch these yourself.
+
+## Release
+
+To release a new version follow these steps:,
+1. Update CHANGELOG.md with the new version changes
+2. Update the version number in `version.rb` 
+3. Execute bundle to update version on `Gemfile.lock` automatically
+4. Commit the changes and change the branch to `main`
+5. Run `bundle exec rake release`, which will create a git tag for the version, push git commits and the created tag, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+
+> Remember to execute `bundle exec rake release` on `main` branch
+> `Gemfile.lock` update for version is done after running `bundle install` with the `version.rb` updated
+
+
 ## Contributing
 
 Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/ruby-brightpearl. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [code of conduct](https://github.com/[USERNAME]/ruby-brightpearl/blob/master/CODE_OF_CONDUCT.md).
