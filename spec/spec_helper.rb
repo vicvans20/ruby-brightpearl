@@ -75,11 +75,22 @@ VCR.configure do |config|
     end
   end
 
+  # Use a more targeted approach that won't break the URL structure
+  config.filter_sensitive_data('<ACCOUNT>') do |interaction|
+    # Only filter the account name in the recorded response, not in the request URL
+    if interaction.request.uri.include?('/public-api/')
+      account = Brightpearl.config.account
+      # Only replace the exact account name, not the path structure
+      account if account
+    end
+  end
+
   # Set default cassette options to use the custom matchers
   config.default_cassette_options = {
     match_requests_on: [:method, :brightpearl_uri_without_account, :oauth_body_without_credentials]
   }
 
+  # Keep your existing filters for headers
   config.filter_sensitive_data('<APP-REF>') do |interaction|
     interaction.request.headers['Brightpearl-App-Ref'] && interaction.request.headers['Brightpearl-App-Ref'].first
   end
@@ -90,15 +101,6 @@ VCR.configure do |config|
 
   config.filter_sensitive_data('<Bearer TOKEN>') do |interaction|
     interaction.request.headers['Authorization'] && interaction.request.headers['Authorization'].first
-  end
-  
-  # Optionally, filter the account name in the URL for consistency in cassettes
-  config.filter_sensitive_data('/public-api/<ACCOUNT>/') do |interaction|
-    uri = URI(interaction.request.uri)
-    path_parts = uri.path.split('/')
-    if path_parts.length > 2 && path_parts[1] == 'public-api'
-      "/public-api/#{path_parts[2]}/"
-    end
   end
 end
 
