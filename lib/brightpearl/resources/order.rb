@@ -60,7 +60,7 @@ module Brightpearl
         @order_shipping_status_id = nil
         @external_ref = ara["reference"]
         @installed_integration_instance_id = nil
-        @warehouse_id = ara["warehousrId"]
+        @warehouse_id = ara["warehouseId"]
         @staff_owner_contact_id = ara["assignment"]["current"]["staffOwnerContactId"]
         @tax_date = ara["invoices"][0] && ara["invoices"][0]["taxDate"]
         @department_id = nil
