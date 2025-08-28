@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/contact-service/contact/151499/custom-field
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Aug 2025 21:30:29 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '37'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9766e8fd0962a4f8-MIA
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-custom-fields
+      Ruid:
+      - f7956dbf-f701-4add-9044-818b29466308
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '30358'
+      Brightpearl-Requests-Remaining:
+      - '195'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=fwMbiJNoj4jO5tsUfdiLqn1h0MG5I4jENi3RH8J6_oQ-1756416629-1.0.1.1-kbpEA0scB.TYTz3Yj1dpHkiEwWUKXpU1bn4F6_CIOQKkvAccNO5Vu_hlmy17siUAyzSUZYTTTgytxDRD9ElyNe21HRyParupzEr4M2Rz6EI;
+        path=/; expires=Thu, 28-Aug-25 22:00:29 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"response":{"PCF_CODAE":1234567890}}'
+  recorded_at: Thu, 28 Aug 2025 21:30:29 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,73 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/contact-service/contact-search?primaryEmail=foo@business.com
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Aug 2025 21:23:38 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - bulk-data-search
+      Ruid:
+      - 9c358f22-7378-46a5-8bda-e66ad36883ee
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '22011'
+      Brightpearl-Requests-Remaining:
+      - '196'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=4nGQihIGJR6dxAJyl7rzWxSNwT8Cv9_.IaspZiqOt8g-1756416218-1.0.1.1-vxQmRgJvqH7DvasLfOqwSXiPj7f4d7lwidPdRVsrchWjumDxeDblSbeGqdeDF1ykiiiZtwzB6vNKrtp8K_dbGTQnxYLLU6.DnpZ2hjo2tZE;
+        path=/; expires=Thu, 28-Aug-25 21:53:38 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9766def06ec7f166-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"results":[[72433,"foo@business.com","","","TEST","Factura
+        Business",false,"TEST COMPANY",false,true,"2022-05-17T16:34:07.000-06:00","2022-05-17T16:34:07.000-06:00",null,null,0,false,"+506
+        2 812 1276","","","TEST COMPANY",null],[72435,"foo@business.com","","","TEST","Factura
+        Business",false,"TEST COMPANY",false,true,"2022-05-17T16:42:09.000-06:00","2022-05-17T16:42:09.000-06:00",null,null,0,false,"88888899","","","TEST
+        COMPANY",null]],"metaData":{"morePagesAvailable":false,"resultsAvailable":2,"resultsReturned":2,"firstResult":1,"lastResult":2,"columns":[{"name":"contactId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"primaryEmail","sortable":true,"filterable":true,"reportDataType":"SEARCH_STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"secondaryEmail","sortable":true,"filterable":true,"reportDataType":"SEARCH_STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"tertiaryEmail","sortable":true,"filterable":true,"reportDataType":"SEARCH_STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"firstName","sortable":true,"filterable":true,"reportDataType":"SEARCH_STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"lastName","sortable":true,"filterable":true,"reportDataType":"SEARCH_STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"isSupplier","sortable":false,"filterable":true,"reportDataType":"BOOLEAN","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"companyName","sortable":true,"filterable":true,"reportDataType":"SEARCH_STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"isStaff","sortable":false,"filterable":true,"reportDataType":"BOOLEAN","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"isCustomer","sortable":false,"filterable":true,"reportDataType":"BOOLEAN","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"createdOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"updatedOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"lastContactedOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"lastOrderedOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"nominalCode","sortable":true,"filterable":true,"reportDataType":"INTEGER","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"isPrimary","sortable":true,"filterable":true,"reportDataType":"BOOLEAN","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"pri","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"sec","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"mob","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"exactCompanyName","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"title","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false}],"sorting":[{"filterable":{"name":"contactId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},"direction":"ASC"}]}},"reference":{}}'
+  recorded_at: Thu, 28 Aug 2025 21:23:38 GMT
+recorded_with: VCR 6.3.1

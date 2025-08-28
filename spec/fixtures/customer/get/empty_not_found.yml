@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/contact-service/contact/1
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 404
+      message: Not Found
+    headers:
+      Date:
+      - Thu, 28 Aug 2025 21:12:57 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-contact
+      Ruid:
+      - 2907a2f3-2027-4119-a78d-9341d41f00e1
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '2381'
+      Brightpearl-Requests-Remaining:
+      - '179'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=lbF9K479mlqv8IStmUSRPi2UjEaB9bRuDcPMs1fS0Gw-1756415577-1.0.1.1-j0WkoD9noj8kFtKmEc72s3omKXKcpOEwaF8LqI1GZ0xS51Dhw553kxjckRwMQ7X4SjXD6a2oYufB4Qsq0TyCDpVVpF2yP5l0ESbNP2Sb0Jg;
+        path=/; expires=Thu, 28-Aug-25 21:42:57 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9766cf4daae5e710-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"errors":[{"code":"CMNC-404","message":"No Contact Found"}]}'
+  recorded_at: Thu, 28 Aug 2025 21:12:58 GMT
+recorded_with: VCR 6.3.1

@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/contact-service/contact/151499
+    body:
+      encoding: UTF-8
+      string: '[{"op":"replace","path":"/firstName","value":"Jane"},{"op":"replace","path":"/lastName","value":"Smith"}]'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Aug 2025 21:19:52 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - patch-contact
+      Ruid:
+      - 86be703f-131f-420f-90c2-18bfe2ae3f35
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '7167'
+      Brightpearl-Requests-Remaining:
+      - '193'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=mBoM7NW0W7Y5l7B8yyXtTUJUWEqs50uznjJsMtEfvv8-1756415992-1.0.1.1-JoUOQkfkLhF2VHbdb54BqjL95yhlkQCrgPhif_5RlWsE9tziDeMmxd2VkEmBnlgILoDxhqVWrjFjPj6JTdaAUUkymFyBmT2pCQqHK2Ronmk;
+        path=/; expires=Thu, 28-Aug-25 21:49:52 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9766d971289ddfa0-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"contactId":151499,"isPrimaryContact":true,"salutation":"","firstName":"Jane","lastName":"Smith","postAddressIds":{"DEF":418692,"BIL":418692,"DEL":418693},"communication":{"emails":{"PRI":{"email":"test@gmail.com"}},"telephones":{"PRI":"+50685698589"},"messagingVoips":{},"websites":{}},"contactStatus":{"current":{"contactStatusId":0}},"relationshipToAccount":{"isSupplier":false,"isStaff":false},"marketingDetails":{"isReceiveEmailNewsletter":true},"financialDetails":{"priceListId":2,"nominalCode":"0","creditLimit":0,"creditTermDays":0,"currencyId":2,"discountPercentage":0.00,"creditTermTypeId":1},"assignment":{"current":{}},"organisation":{"organisationId":151499},"tradeStatus":"UNKNOWN","createdByid":0,"createdOn":"2025-02-21T10:30:08.000-06:00","updatedOn":"2025-08-28T15:19:52.000-06:00","contactTags":"9","aliases":{},"companyId":0}}'
+  recorded_at: Thu, 28 Aug 2025 21:19:52 GMT
+recorded_with: VCR 6.3.1

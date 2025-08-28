@@ -1,16 +1,27 @@
 ## [Unreleased]
 
+## [0.6.0]
+
+- New resource `Customer`
+- New resource `CustomerCustomField`
+- Minor fixes on development libs
+
 ## [0.5.0]
+
 - Add new resource OrderCustomField
 - Improve test environment to use different bp credentials without breaking the cassettes
 
 ## [0.3.0] - 2022-02-03
+
 - New resource TaxCode
 - Fix minor typos
 - New optional config `debug_mode`
+
 ## [0.3.0] - 2022-02-03
 - New resource ProductAvailability
+
 ## [0.2.0] - 2022-02-02
+
 - Add refresh token mechanic with method `use_refresh_token`
 - Change config values
   - Add refresh_token to allow automatic update of tokens when calling the new method `use_refresh_token`

@@ -1,0 +1,70 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/contact-service/contact/81011,151499
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Aug 2025 20:59:53 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-contact
+      Ruid:
+      - 4479754a-fb0e-4700-accd-66a0d88aaa42
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '6346'
+      Brightpearl-Requests-Remaining:
+      - '179'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=qAo5lPWdxc6xLy6lQ4tCbm1b_V8iH4Ioq2iinqusY70-1756414793-1.0.1.1-G11WBQD8qzIS7vI75YbzsD0mEAED6OWYIYvWowQdXi66TMt189vXIukGuB4NuyiXTB7or.vYFrrCq6AxDtW1Z36MVVPdKe1_6KkDG6iG_0A;
+        path=/; expires=Thu, 28-Aug-25 21:29:53 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9766bc2a4fc67489-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: !binary |-
+        eyJyZXNwb25zZSI6W3siY29udGFjdElkIjo4MTAxMSwiaXNQcmltYXJ5Q29udGFjdCI6dHJ1ZSwic2FsdXRhdGlvbiI6IiIsImZpcnN0TmFtZSI6IlbDrWN0b3IiLCJsYXN0TmFtZSI6IlZhbmVnYXMiLCJwb3N0QWRkcmVzc0lkcyI6eyJERUYiOjIwMDkxNywiQklMIjoyMDA5MTcsIkRFTCI6MjAwOTE4fSwiY29tbXVuaWNhdGlvbiI6eyJlbWFpbHMiOnsiUFJJIjp7ImVtYWlsIjoidmljdmFuczIwQGdtYWlsLmNvbSJ9fSwidGVsZXBob25lcyI6eyJQUkkiOiIxMjMxMjMxMjMifSwibWVzc2FnaW5nVm9pcHMiOnt9LCJ3ZWJzaXRlcyI6e319LCJjb250YWN0U3RhdHVzIjp7ImN1cnJlbnQiOnsiY29udGFjdFN0YXR1c0lkIjowfX0sInJlbGF0aW9uc2hpcFRvQWNjb3VudCI6eyJpc1N1cHBsaWVyIjpmYWxzZSwiaXNTdGFmZiI6ZmFsc2V9LCJtYXJrZXRpbmdEZXRhaWxzIjp7ImlzUmVjZWl2ZUVtYWlsTmV3c2xldHRlciI6dHJ1ZX0sImZpbmFuY2lhbERldGFpbHMiOnsicHJpY2VMaXN0SWQiOjIsIm5vbWluYWxDb2RlIjoiMCIsImNyZWRpdExpbWl0IjowLCJjcmVkaXRUZXJtRGF5cyI6MCwiY3VycmVuY3lJZCI6MiwiZGlzY291bnRQZXJjZW50YWdlIjowLjAwLCJjcmVkaXRUZXJtVHlwZUlkIjoxfSwiYXNzaWdubWVudCI6eyJjdXJyZW50Ijp7fX0sIm9yZ2FuaXNhdGlvbiI6eyJvcmdhbmlzYXRpb25JZCI6ODEwMTF9LCJ0cmFkZVN0YXR1cyI6IlVOS05PV04iLCJjcmVhdGVkQnlpZCI6MCwiY3JlYXRlZE9uIjoiMjAyMi0wOS0wN1QyMToyNjoyNC4wMDAtMDY6MDAiLCJ1cGRhdGVkT24iOiIyMDIyLTExLTIyVDEyOjI3OjQzLjAwMC0wNjowMCIsImNvbnRhY3RUYWdzIjoiOSIsImFsaWFzZXMiOnt9LCJjb21wYW55SWQiOjB9LHsiY29udGFjdElkIjoxNTE0OTksImlzUHJpbWFyeUNvbnRhY3QiOnRydWUsInNhbHV0YXRpb24iOiIiLCJmaXJzdE5hbWUiOiJqb2huIiwibGFzdE5hbWUiOiJEb2UiLCJwb3N0QWRkcmVzc0lkcyI6eyJERUYiOjQxODY5MiwiQklMIjo0MTg2OTIsIkRFTCI6NDE4NjkzfSwiY29tbXVuaWNhdGlvbiI6eyJlbWFpbHMiOnsiUFJJIjp7ImVtYWlsIjoidGVzdEBnbWFpbC5jb20ifX0sInRlbGVwaG9uZXMiOnsiUFJJIjoiKzUwNjg1Njk4NTg5In0sIm1lc3NhZ2luZ1ZvaXBzIjp7fSwid2Vic2l0ZXMiOnt9fSwiY29udGFjdFN0YXR1cyI6eyJjdXJyZW50Ijp7ImNvbnRhY3RTdGF0dXNJZCI6MH19LCJyZWxhdGlvbnNoaXBUb0FjY291bnQiOnsiaXNTdXBwbGllciI6ZmFsc2UsImlzU3RhZmYiOmZhbHNlfSwibWFya2V0aW5nRGV0YWlscyI6eyJpc1JlY2VpdmVFbWFpbE5ld3NsZXR0ZXIiOnRydWV9LCJmaW5hbmNpYWxEZXRhaWxzIjp7InByaWNlTGlzdElkIjoyLCJub21pbmFsQ29kZSI6IjAiLCJjcmVkaXRMaW1pdCI6MCwiY3JlZGl0VGVybURheXMiOjAsImN1cnJlbmN5SWQiOjIsImRpc2NvdW50UGVyY2VudGFnZSI6MC4wMCwiY3JlZGl0VGVybVR5cGVJZCI6MX0sImFzc2lnbm1lbnQiOnsiY3VycmVudCI6e319LCJvcmdhbmlzYXRpb24iOnsib3JnYW5pc2F0aW9uSWQiOjE1MTQ5OX0sInRyYWRlU3RhdHVzIjoiVU5LTk9XTiIsImNyZWF0ZWRCeWlkIjowLCJjcmVhdGVkT24iOiIyMDI1LTAyLTIxVDEwOjMwOjA4LjAwMC0wNjowMCIsInVwZGF0ZWRPbiI6IjIwMjUtMDgtMjhUMTQ6NTk6NTMuNjY1LTA2OjAwIiwiY29udGFjdFRhZ3MiOiI5IiwiYWxpYXNlcyI6e30sImNvbXBhbnlJZCI6MH1dLCJwYWdpbmF0aW9uIjp7Im1vcmVQYWdlc0F2YWlsYWJsZSI6ZmFsc2UsInJlc3VsdHNSZXR1cm5lZCI6MiwiZmlyc3RSZXN1bHQiOjEsImxhc3RSZXN1bHQiOjJ9LCJzb3J0aW5nIjpbeyJmaWVsZCI6ImNvbnRhY3RJZCIsImRpcmVjdGlvbiI6IkFTQyJ9XX0=
+  recorded_at: Thu, 28 Aug 2025 20:59:53 GMT
+recorded_with: VCR 6.0.0
