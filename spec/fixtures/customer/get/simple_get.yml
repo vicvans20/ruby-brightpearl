@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/contact-service/contact/151499
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Aug 2025 20:59:23 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-contact
+      Ruid:
+      - b7ef623a-71e1-455c-916f-8f34645df7c6
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '37058'
+      Brightpearl-Requests-Remaining:
+      - '188'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=uiI7t9jmT1al22QzCYiq9TTDCVKOL26IMWgPE0B88Js-1756414763-1.0.1.1-arg9WWvoY7qDnCX5jybdVlIIkjtX8.FVlUVNbujIYNW9JEiJhbLkNlaryntUWra92_nh7FxMWmoyDxUk3DsMOfX0JDuZCAaGhQIfuDvSe_o;
+        path=/; expires=Thu, 28-Aug-25 21:29:23 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9766bb6a5b4074a8-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":[{"contactId":151499,"isPrimaryContact":true,"salutation":"","firstName":"john","lastName":"Doe","postAddressIds":{"DEF":418692,"BIL":418692,"DEL":418693},"communication":{"emails":{"PRI":{"email":"test@gmail.com"}},"telephones":{"PRI":"+50685698589"},"messagingVoips":{},"websites":{}},"contactStatus":{"current":{"contactStatusId":0}},"relationshipToAccount":{"isSupplier":false,"isStaff":false},"marketingDetails":{"isReceiveEmailNewsletter":true},"financialDetails":{"priceListId":2,"nominalCode":"0","creditLimit":0,"creditTermDays":0,"currencyId":2,"discountPercentage":0.00,"creditTermTypeId":1},"assignment":{"current":{}},"organisation":{"organisationId":151499},"tradeStatus":"UNKNOWN","createdByid":0,"createdOn":"2025-02-21T10:30:08.000-06:00","updatedOn":"2025-08-28T14:59:22.970-06:00","contactTags":"9","aliases":{},"companyId":0}],"pagination":{"morePagesAvailable":false,"resultsReturned":1,"firstResult":1,"lastResult":1},"sorting":[{"field":"contactId","direction":"ASC"}]}'
+  recorded_at: Thu, 28 Aug 2025 20:59:23 GMT
+recorded_with: VCR 6.0.0
