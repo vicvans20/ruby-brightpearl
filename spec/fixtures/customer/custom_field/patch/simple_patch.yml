@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: patch
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/contact-service/contact/151499/custom-field
+    body:
+      encoding: UTF-8
+      string: '[{"op":"add","path":"/PCF_CODAE","value":"1234567890"}]'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Thu, 28 Aug 2025 21:30:30 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '37'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 9766e900ec18cb53-MIA
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - patch-custom-fields
+      Ruid:
+      - d5451f4e-828c-4620-9241-c4580abfdd1b
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '29757'
+      Brightpearl-Requests-Remaining:
+      - '194'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=rgLsRSJQRaDzH.vmps5VxtSYL7pXUeb9WwZy8fc8wzs-1756416630-1.0.1.1-.hp35QJ.S0d6lUN1owxAbTEZM12S66NPrqQLtnahgYTdVDMsf1ZLHQp1pny.8FlI.AaETU1EN2B5BVmYUNwZnmLXteT0AXV.6LMSuO9EFzE;
+        path=/; expires=Thu, 28-Aug-25 22:00:30 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"response":{"PCF_CODAE":1234567890}}'
+  recorded_at: Thu, 28 Aug 2025 21:30:30 GMT
+recorded_with: VCR 6.3.1
