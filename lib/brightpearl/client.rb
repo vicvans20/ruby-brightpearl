@@ -54,6 +54,7 @@ module Brightpearl
       elsif response.code == 401
         raise Brightpearl::InvalidToken.new(json["response"], response: json, status: 401)
       elsif !!json["errors"]
+        # Request Error is the fallback message. If response has a tangible error message, first one will be used from response json
         raise Brightpearl::RequestError.new("Request Error",  response: json, status: response.code)
       end
 

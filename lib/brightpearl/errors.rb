@@ -3,9 +3,11 @@ module Brightpearl
     attr_reader :response, :code, :status
     def initialize(msg, response: nil, status: nil)
       if response["errors"] && response["errors"].size == 1 # If error is easily identifiable then set it as the Error message
-        error = response["errors"][0]["message"]
+        error_message = response["errors"][0]["message"]
         @code = response["errors"][0]["code"]
-        super(error)
+
+        error_message = "#{@code} - #{error_message}" if @code
+        super(error_message)
       else
         super(msg)
       end

@@ -1,0 +1,141 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/integration-service/webhook
+    body:
+      encoding: UTF-8
+      string: '{"subscribeTo":"goods-in-note.created","httpMethod":"POST","uriTemplate":"https://example.com/endpoint/to/receive/webhooks","contentType":"application/json","idSetAccepted":true,"qualityOfService":1,"bodyTemplate":"{
+        \"accountCode\": \"${account-code}\", \"resourceType\": \"${resource-type}\",
+        \"id\": \"${resource-id}\", \"lifecycleEvent\": \"${lifecycle-event}\", \"fullEvent\":
+        \"${full-event}\", \"raisedOn\": \"${raised-on}\", \"brightpearlVersion\":
+        \"${brightpearl-version}\" }"}'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2025 21:59:16 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 998f2343c94c9ad1-MIA
+      Message-Type:
+      - post-webhook
+      Ruid:
+      - fcd853f3-0595-47de-883e-b5b22e2b01ad
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '43834'
+      Brightpearl-Requests-Remaining:
+      - '189'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=_zeYEeFI1.65J8B8WrygAED22MJv9DKW_qRDPIxpySk-1762207156-1.0.1.1-RSwCD1q.b_2dVCQpAdVbFLbgzyhZEaes93wHEj2XHeSnsSsFFOX62wVo.8YbYuBnZxp8Da.cHJ9JGopkOfl.8XwdlEWuevuPQYR30TJB8b8;
+        path=/; expires=Mon, 03-Nov-25 22:29:16 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"response":121}'
+  recorded_at: Mon, 03 Nov 2025 21:59:16 GMT
+- request:
+    method: delete
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/integration-service/webhook/121
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2025 21:59:16 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 998f23481ee35c86-MIA
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - webhook-delete
+      Ruid:
+      - bbd85909-84e2-4368-9207-e36b9886a8e4
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '43158'
+      Brightpearl-Requests-Remaining:
+      - '188'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=XbA0TWO1ybdka3kJJcfQvHcIZQ3DaKAWeL6rC5kkqJI-1762207156-1.0.1.1-vF6MrGH4qtoBugEHmepHxcP6F49kfx8CN9krdPX9SCNyvPZcEgqHPxUu9.seSJvdJdW2wBkGMoortjB_OU7.B6nqmOBAZEJslo.hF0gEh28;
+        path=/; expires=Mon, 03-Nov-25 22:29:16 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Mon, 03 Nov 2025 21:59:16 GMT
+recorded_with: VCR 6.3.1

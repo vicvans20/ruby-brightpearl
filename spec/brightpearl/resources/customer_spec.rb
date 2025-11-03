@@ -39,7 +39,7 @@ RSpec.describe Brightpearl::Customer do
       VCR.use_cassette("customer/get/empty_not_found") do
         expect {
           Brightpearl::Customer.get(1)
-        }.to raise_error(Brightpearl::RequestError, "No Contact Found")
+        }.to raise_error(Brightpearl::RequestError, "CMNC-404 - No Contact Found")
       end
     end
 
