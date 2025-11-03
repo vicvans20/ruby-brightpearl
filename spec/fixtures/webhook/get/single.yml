@@ -1,0 +1,211 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/integration-service/webhook
+    body:
+      encoding: UTF-8
+      string: '{"subscribeTo":"goods-in-note.created","httpMethod":"POST","uriTemplate":"https://example.com/endpoint/to/receive/webhooks","contentType":"application/json","idSetAccepted":true,"qualityOfService":1,"bodyTemplate":"{
+        \"accountCode\": \"${account-code}\", \"resourceType\": \"${resource-type}\",
+        \"id\": \"${resource-id}\", \"lifecycleEvent\": \"${lifecycle-event}\", \"fullEvent\":
+        \"${full-event}\", \"raisedOn\": \"${raised-on}\", \"brightpearlVersion\":
+        \"${brightpearl-version}\" }"}'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2025 22:08:49 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '16'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 998f3141687bdd66-MIA
+      Message-Type:
+      - post-webhook
+      Ruid:
+      - 797f3497-205d-44d7-b83a-663ee24b8a4b
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '10778'
+      Brightpearl-Requests-Remaining:
+      - '193'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=_S6ispl.O9Ay6XNoK_cZ9e.maju4Pld_LZTOQdGUAS8-1762207729-1.0.1.1-OMBT8rMyWGliC59mjhmu4p0tbrfCRhGyFkv4aM1HlZ3IxewVMXaadI5sW5SoympqMIWg6OkSHhWqKh_nJkM1_cezr6oTsTkk79mqZWS98rY;
+        path=/; expires=Mon, 03-Nov-25 22:38:49 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"response":122}'
+  recorded_at: Mon, 03 Nov 2025 22:08:49 GMT
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/integration-service/webhook/122
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2025 22:08:50 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - webhook-get
+      Ruid:
+      - e8e7c779-c91d-48c4-9e65-e8c2be6282f6
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '10014'
+      Brightpearl-Requests-Remaining:
+      - '192'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=rHFAxloowQvB9H75c1yEAp5bzII.s_I4CYfiVHZ7lvQ-1762207730-1.0.1.1-HUECp4SDmHijNYSZtT5Jmh6xW2U.29GMmWiTowaAotAv2GqGBa6jEP24dNNFuREJr36O3ZYaXgdfxtT6oMuCLpbSx99UT3yuc5CiL_8HF_0;
+        path=/; expires=Mon, 03-Nov-25 22:38:50 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 998f31461e40cc79-TPA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":[{"id":122,"subscribeTo":"goods-in-note.created","httpMethod":"POST","uriTemplate":"https://example.com/endpoint/to/receive/webhooks","bodyTemplate":"{
+        \"accountCode\": \"${account-code}\", \"resourceType\": \"${resource-type}\",
+        \"id\": \"${resource-id}\", \"lifecycleEvent\": \"${lifecycle-event}\", \"fullEvent\":
+        \"${full-event}\", \"raisedOn\": \"${raised-on}\", \"brightpearlVersion\":
+        \"${brightpearl-version}\" }","contentType":"application/json","idSetAccepted":true,"qualityOfService":1}]}'
+  recorded_at: Mon, 03 Nov 2025 22:08:50 GMT
+- request:
+    method: delete
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/integration-service/webhook/122
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Mon, 03 Nov 2025 22:09:33 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 998f3255e90aefc7-TPA
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - webhook-delete
+      Ruid:
+      - 2645283a-2e8c-4cff-8d36-f51b8e968a04
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '26818'
+      Brightpearl-Requests-Remaining:
+      - '188'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=GHliIsLUKogyfy7GQjq6BE6kolM_df14siH9hqSl_5I-1762207773-1.0.1.1-_YqAo9EGoKcj8wBADrW8u.C4tvbzTHfeTaMhc7Iw1An.I.7TC5t4cjQUvToXWH2n00juPmkEbeIIexJxZ66mLBX8BuoKEI9.oJkrNSlDmdY;
+        path=/; expires=Mon, 03-Nov-25 22:39:33 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Mon, 03 Nov 2025 22:09:33 GMT
+recorded_with: VCR 6.3.1

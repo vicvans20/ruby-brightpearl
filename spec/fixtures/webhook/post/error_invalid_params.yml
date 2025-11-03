@@ -1,0 +1,76 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/integration-service/webhook
+    body:
+      encoding: UTF-8
+      string: '{"subscribeTo":"invalid-resource","httpMethod":"POST","uriTemplate":"https://example.com/endpoint/to/receive/webhooks","contentType":"application/json","idSetAccepted":true,"qualityOfService":1,"bodyTemplate":"{
+        \"accountCode\": \"${account-code}\", \"resourceType\": \"${resource-type}\",
+        \"id\": \"${resource-id}\", \"lifecycleEvent\": \"${lifecycle-event}\", \"fullEvent\":
+        \"${full-event}\", \"raisedOn\": \"${raised-on}\", \"brightpearlVersion\":
+        \"${brightpearl-version}\" }"}'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 400
+      message: Bad Request
+    headers:
+      Date:
+      - Mon, 03 Nov 2025 22:06:35 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '111'
+      Connection:
+      - keep-alive
+      Cf-Ray:
+      - 998f2dfa2df7cc76-TPA
+      Message-Type:
+      - post-webhook
+      Ruid:
+      - 1a8486f9-2c9e-479d-9456-99d8f9ab95c4
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '25026'
+      Brightpearl-Requests-Remaining:
+      - '66'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=qAVwIU.1rrxbek1kHv1NYMT2Z_RZsUYnnjOfM_5r48I-1762207595-1.0.1.1-fpjVhorOQMJgZUDX1sNqVK8z9AjakEzKBRy4M8HzQPWcELE_ZdrPLgQlkPtJuIwmDp5iZ5JziVUl7YKA8mouM69HPIBHvAcTznDMHbRwtHM;
+        path=/; expires=Mon, 03-Nov-25 22:36:35 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"errors":[{"code":"INTC-064","message":"invalid-resource either does
+        not exist or cannot be subscribed too"}]}'
+  recorded_at: Mon, 03 Nov 2025 22:06:35 GMT
+recorded_with: VCR 6.3.1
