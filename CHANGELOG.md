@@ -1,12 +1,24 @@
 ## [Unreleased]
 
-## [0.6.0]
+## [0.7.0] - 2025-11-03
+
+### Added
+
+- New API Operation `DELETE`
+- **New resource `Webhook`**
+  - Available operations: `GET`, `POST`, `DELETE`
+
+### Changed
+- Improved `Brightpearl::RequestError` message to include error code when available
+  - For example, `CMNC-404 - Resource not found` instead of just `Resource not found`
+
+## [0.6.0] - 2025-08-28
 
 - New resource `Customer`
 - New resource `CustomerCustomField`
 - Minor fixes on development libs
 
-## [0.5.0]
+## [0.5.0] - 2025-03-27
 
 - Add new resource OrderCustomField
 - Improve test environment to use different bp credentials without breaking the cassettes
