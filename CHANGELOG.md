@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [0.8.0] - 2025-11-05
+
+### Added
+
+- **New resource `GoodsOutNote`**
+  - Available operations: `GET`, `POST`, `PUT`, `DELETE`
+  - Search is still pending to be implemented
+
 ## [0.7.0] - 2025-11-03
 
 ### Added
