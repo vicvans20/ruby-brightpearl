@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/unimart/warehouse-service/order/988116/goods-note/goods-out/
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 05 Nov 2025 21:36:00 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-goods-out-note
+      Ruid:
+      - 88118a1d-8183-402a-9c75-0e46f39c0e3f
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '34'
+      Brightpearl-Next-Throttle-Period:
+      - '59138'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=XSPWJEz3QTduGo1aD2P.Rm5PLSbKHk6Of3_3cRb9FSk-1762378560-1.0.1.1-ujcrko.PrYOA4e.0S0S8u.RRaXNIIPFON76CG1Wp0TaESzr0xgN0ytVSR2jgd9pVhhdQNW1NWjXpJ282vSPxQEER88iOiPd3mkZCQhbmq0Y;
+        path=/; expires=Wed, 05-Nov-25 22:06:00 GMT; domain=.brightpearlconnect.com;
+        HttpOnly; Secure; SameSite=None
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 999f7bf32d7a7529-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"12447605":{"orderId":988116,"warehouseId":2,"transfer":false,"priority":false,"status":{"shipped":true,"packed":true,"picked":true,"printed":true,"pickedOn":"2025-11-04T10:41:38.000-06:00","packedOn":"2025-11-04T10:41:38.000-06:00","shippedOn":"2025-11-04T10:41:38.000-06:00","printedOn":"2025-11-04T10:41:38.000-06:00","pickedById":4,"packedById":4,"shippedById":4,"printedById":4},"shipping":{"reference":"","shippingMethodId":49},"releaseDate":"2025-11-04T10:17:45.000-06:00","createdOn":"2025-11-04T10:17:45.000-06:00","createdBy":203,"orderRows":{"2975385":[{"productId":489065,"quantity":1,"locationId":2}],"2975384":[{"productId":498969,"quantity":1,"locationId":2}],"2975387":[{"productId":506939,"quantity":1,"locationId":2}],"2975386":[{"productId":497476,"quantity":1,"locationId":2}]},"sequence":1,"events":[{"occured":"2025-11-04T10:17:45.000-06:00","eventOwnerId":203,"eventCode":"PLA"},{"occured":"2025-11-04T10:41:38.000-06:00","eventOwnerId":4,"eventCode":"SHW"},{"occured":"2025-11-04T10:41:38.000-06:00","eventOwnerId":4,"eventCode":"PRI"},{"occured":"2025-11-04T10:41:38.000-06:00","eventOwnerId":4,"eventCode":"PIC"},{"occured":"2025-11-04T10:41:38.000-06:00","eventOwnerId":4,"eventCode":"PAC"}],"lastEventVersion":3131069}}}'
+  recorded_at: Wed, 05 Nov 2025 21:36:00 GMT
+recorded_with: VCR 6.3.1
