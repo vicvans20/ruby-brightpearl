@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [0.9.0] - 2025-12-10
+
+### Changed
+
+- **Renamed `Customer` resources to `Contact` to match Brightpearl API documentation**
+  - Renamed `Customer` to `Contact`
+  - Renamed `CustomerCustomField` to `ContactCustomField`
+
 ## [0.8.0] - 2025-11-05
 
 ### Added

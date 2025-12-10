@@ -1,11 +1,11 @@
 # frozen_string_literal: true
-RSpec.describe Brightpearl::CustomerCustomField do
-  let(:sample_customer_id) { 151499 }
+RSpec.describe Brightpearl::ContactCustomField do
+  let(:sample_contact_id) { 151499 }
 
   describe "GET" do
-    it "returns a customer custom field" do
+    it "returns a contact custom field" do
       VCR.use_cassette("customer/custom_field/get/simple_get") do
-        response = Brightpearl::CustomerCustomField.get(sample_customer_id)
+        response = Brightpearl::ContactCustomField.get(sample_contact_id)
         expect(response).to include(
           payload: a_hash_including(
             "response" => a_hash_including(
@@ -20,7 +20,7 @@ RSpec.describe Brightpearl::CustomerCustomField do
   describe "PATCH" do
     it "Add escalar custom field value" do
       VCR.use_cassette("customer/custom_field/patch/simple_patch") do
-        response = Brightpearl::CustomerCustomField.patch(sample_customer_id, [
+        response = Brightpearl::ContactCustomField.patch(sample_contact_id, [
           {
             op: "add",
             path: "/PCF_CODAE",
@@ -39,3 +39,4 @@ RSpec.describe Brightpearl::CustomerCustomField do
   end # PATCH
 
 end
+

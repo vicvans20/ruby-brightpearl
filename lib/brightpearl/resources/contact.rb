@@ -1,6 +1,6 @@
 module Brightpearl
   # https://api-docs.brightpearl.com/contact/contact/index.html
-  class Customer < Resource
+  class Contact < Resource
     extend Brightpearl::APIOperations::Get
     extend Brightpearl::APIOperations::Post
     extend Brightpearl::APIOperations::Patch
@@ -26,7 +26,7 @@ module Brightpearl
       def search(query_params = {})
         response = send_request(path: "contact-service/contact-search?#{to_query(query_params)}", method: :get)
         return response.merge({ # modify final payload to set search results as objects
-          records: response[:payload]["response"]["results"].map { |item| Customer.new(item) },
+          records: response[:payload]["response"]["results"].map { |item| Contact.new(item) },
          })
       end
     end
@@ -58,3 +58,4 @@ module Brightpearl
 
   end
 end
+
