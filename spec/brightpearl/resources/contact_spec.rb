@@ -1,17 +1,17 @@
 # frozen_string_literal: true
-RSpec.describe Brightpearl::Customer do
-  let(:sample_customer_id) { 151499 }
-  let(:sample_customer_id2) { 81011 }
+RSpec.describe Brightpearl::Contact do
+  let(:sample_contact_id) { 151499 }
+  let(:sample_contact_id2) { 81011 }
 
   describe "GET" do
 
-    it "returns one customer" do
+    it "returns one contact" do
       VCR.use_cassette("customer/get/simple_get") do
-        response = Brightpearl::Customer.get(sample_customer_id)
+        response = Brightpearl::Contact.get(sample_contact_id)
         expect(response).to include(
           payload: a_hash_including(
             "response" => [ 
-              a_hash_including("contactId" => sample_customer_id) 
+              a_hash_including("contactId" => sample_contact_id) 
             ]
           ),
           quota_remaining: be_truthy
@@ -19,14 +19,14 @@ RSpec.describe Brightpearl::Customer do
       end
     end
 
-    it "returns multiple customers" do
+    it "returns multiple contacts" do
       VCR.use_cassette("customer/get/multiple_get") do
-        response = Brightpearl::Customer.get("#{sample_customer_id2},#{sample_customer_id}")
+        response = Brightpearl::Contact.get("#{sample_contact_id2},#{sample_contact_id}")
         expect(response).to include(
           payload: a_hash_including(
             "response" => include(
-              a_hash_including("contactId" => sample_customer_id),
-              a_hash_including("contactId" => sample_customer_id2)
+              a_hash_including("contactId" => sample_contact_id),
+              a_hash_including("contactId" => sample_contact_id2)
             )
           ),
           quota_remaining: be_truthy
@@ -35,17 +35,17 @@ RSpec.describe Brightpearl::Customer do
     end
 
     # {"errors": [ { "code": "CMNC-404", "message": "No Contact Found" } ] }
-    it "returns an error when the customer does not exist" do
+    it "returns an error when the contact does not exist" do
       VCR.use_cassette("customer/get/empty_not_found") do
         expect {
-          Brightpearl::Customer.get(1)
+          Brightpearl::Contact.get(1)
         }.to raise_error(Brightpearl::RequestError, "CMNC-404 - No Contact Found")
       end
     end
 
   end # GET
 
-  # Requires Address resource as Customer creation requires address ID to work
+  # Requires Address resource as Contact creation requires address ID to work
   xdescribe "POST" do
     let(:post_body) do
       {
@@ -62,9 +62,9 @@ RSpec.describe Brightpearl::Customer do
     end
 
     context "Success cases" do
-      it "creates a customer" do
+      it "creates a contact" do
         VCR.use_cassette("customer/post/simple_post") do
-          response = Brightpearl::Customer.post(post_body)
+          response = Brightpearl::Contact.post(post_body)
           expect(response).to include(
             payload: a_hash_including(
               "response" => be_truthy
@@ -78,7 +78,7 @@ RSpec.describe Brightpearl::Customer do
     context "Error cases" do
       it "returns error for missing required fields" do
         VCR.use_cassette("customer/post/error_missing_required") do
-          response = Brightpearl::Customer.post({})
+          response = Brightpearl::Contact.post({})
           expect(response).to include(
             payload: a_hash_including(
               "errors" => be_truthy
@@ -107,9 +107,9 @@ RSpec.describe Brightpearl::Customer do
       ]
     end
 
-    it "updates a customer" do
+    it "updates a contact" do
       VCR.use_cassette("customer/patch/simple_patch") do
-        response = Brightpearl::Customer.patch(sample_customer_id, patch_body)
+        response = Brightpearl::Contact.patch(sample_contact_id, patch_body)
         expect(response).to include(
           payload: a_hash_including(
             "response" => a_hash_including(
@@ -125,9 +125,9 @@ RSpec.describe Brightpearl::Customer do
   end # PATCH
 
   describe "OPTIONS" do
-    it "returns customer options" do
+    it "returns contact options" do
       VCR.use_cassette("customer/options/simple_options") do
-        response = Brightpearl::Customer.options("#{sample_customer_id2},#{sample_customer_id}")
+        response = Brightpearl::Contact.options("#{sample_contact_id2},#{sample_contact_id}")
         expect(response).to include(
           payload: be_truthy,
           quota_remaining: be_truthy
@@ -138,9 +138,9 @@ RSpec.describe Brightpearl::Customer do
   end # OPTIONS
 
   describe "SEARCH" do
-    it "searches customers" do
+    it "searches contacts" do
       VCR.use_cassette("customer/search/simple_search") do
-        response = Brightpearl::Customer.search({ primaryEmail: "foo@business.com" })
+        response = Brightpearl::Contact.search({ primaryEmail: "foo@business.com" })
         expect(response).to include(
           records: be_an(Array),
           payload: a_hash_including(
@@ -151,9 +151,10 @@ RSpec.describe Brightpearl::Customer do
           quota_remaining: be_truthy
         )
 
-        expect(response[:records]).to all(be_a(Brightpearl::Customer))
+        expect(response[:records]).to all(be_a(Brightpearl::Contact))
         expect(response[:records].first.primary_email).to eq("foo@business.com")
       end
     end
   end # SEARCH
 end 
+

@@ -1,7 +1,7 @@
 require 'brightpearl/resource'
 
-require 'brightpearl/resources/customer'
-require 'brightpearl/resources/customer_custom_field'
+require 'brightpearl/resources/contact'
+require 'brightpearl/resources/contact_custom_field'
 
 require 'brightpearl/resources/order'
 require 'brightpearl/resources/order_row'
