@@ -1,5 +1,12 @@
 ## [Unreleased]
 
+## [0.10.0] - 2026-04-17
+
+### Added
+
+- New resource `CustomerPayment`
+  - Available operations: `SEARCH`, `POST`, `DELETE`
+
 ## [0.9.0] - 2025-12-10
 
 ### Changed

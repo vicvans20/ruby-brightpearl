@@ -1,0 +1,72 @@
+---
+http_interactions:
+- request:
+    method: post
+    uri: https://euw1.brightpearlconnect.com/public-api/<DEV-REF>/accounting-service/customer-payment
+    body:
+      encoding: UTF-8
+      string: '{"transactionRef":"RUBY-BP-RECEIPT-REF-0001","transactionCode":"RUBY-BP-RECEIPT-CODE-0001","paymentMethodCode":"PUNTOS","paymentType":"RECEIPT","orderId":1081505,"currencyIsoCode":"CRC","exchangeRate":1.0,"amountPaid":100.0,"paymentDate":"2026-04-17T10:00:00-06:00","journalRef":"ruby-brightpearl
+        customer payment receipt test"}'
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Content-Type:
+      - application/json
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 17 Apr 2026 17:32:08 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '19'
+      Connection:
+      - keep-alive
+      Message-Type:
+      - post-customer-payment
+      Ruid:
+      - 904876b7-8cbf-41cd-b144-75ddf37e74c5
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Cache-Control:
+      - no-cache, must-revalidate
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '50'
+      Brightpearl-Next-Throttle-Period:
+      - '51219'
+      Brightpearl-Requests-Remaining:
+      - '197'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=VPm4TQfN0PUdmGSzOVssLj2VTkbAkVDbtBcsk7FfdMg-1776447128.4356654-1.0.1.1-d63JfsYXYw2xmy5PZODiv5QnN1piyK.JmKQmScp_qkhUN1s3GTUTVJsyV11jrvUzDEJ4TQXSRkdKc4IifyYSgJ8TMDvnXpxJQ6eCFGbCAfXJ8VarettVYBhY5IJXGv92;
+        HttpOnly; Secure; Path=/; Domain=brightpearlconnect.com; Expires=Fri, 17 Apr
+        2026 18:02:08 GMT
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9edd2ad8bc24da04-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: '{"response":935253}'
+  recorded_at: Fri, 17 Apr 2026 17:32:08 GMT
+recorded_with: VCR 6.3.1

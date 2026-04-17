@@ -1,0 +1,135 @@
+---
+http_interactions:
+- request:
+    method: delete
+    uri: https://euw1.brightpearlconnect.com/public-api/<DEV-REF>/accounting-service/customer-payment/935253
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 17 Apr 2026 17:32:09 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Content-Length:
+      - '2'
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - delete-customer-payment
+      Ruid:
+      - 1eaf9550-c641-457c-bb8a-0d729519cfce
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '50'
+      Brightpearl-Next-Throttle-Period:
+      - '50343'
+      Brightpearl-Requests-Remaining:
+      - '195'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=NIzDBsLkb9RqfxtdDnJA8MNsDL9x3i3KsiRA54yEH48-1776447129.362206-1.0.1.1-QhL3jNxjGmZX_DmBpLAAifj96.P9djL3OSs8I_uthQAfbZDIlSL52KtSAxBxYGWRUO9U_A2J_t4WjeOIgX7L.NW12_ncpt9GiZbq0kkBviXMSrbrMaFuXN0GX.FuhAbj;
+        HttpOnly; Secure; Path=/; Domain=brightpearlconnect.com; Expires=Fri, 17 Apr
+        2026 18:02:09 GMT
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9edd2ade892adfbd-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: UTF-8
+      string: "{}"
+  recorded_at: Fri, 17 Apr 2026 17:32:09 GMT
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/<DEV-REF>/accounting-service/customer-payment-search?orderId=1081505
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 17 Apr 2026 17:32:10 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - bulk-data-search
+      Ruid:
+      - 713d619f-56ce-47bb-bb0d-b49e984fb249
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '50'
+      Brightpearl-Next-Throttle-Period:
+      - '49968'
+      Brightpearl-Requests-Remaining:
+      - '194'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=MTCMaYjiDIKByYNIJ561YBqSojNPb8azW8DsrgMLbpU-1776447129.9598029-1.0.1.1-x3d2WumgC1s5TeyxmQuUDCpyNjcmiADJ9BB68gwjUrk.isH92b23wQKBr5xFyWnQckPOCuimyJ04KxGTdMMQteoCDoeBnD1UBOOct1RT.lHDgUX7.0R4zjOjhACiE_Ml;
+        HttpOnly; Secure; Path=/; Domain=brightpearlconnect.com; Expires=Fri, 17 Apr
+        2026 18:02:10 GMT
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9edd2ae23d4da669-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"results":[],"metaData":{"morePagesAvailable":false,"resultsAvailable":0,"resultsReturned":0,"columns":[{"name":"paymentId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"transactionRef","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"transactionCode","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"paymentMethodCode","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"paymentType","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"orderId","sortable":false,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"currencyId","sortable":false,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"currencyCode","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"amountAuthorized","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"amountPaid","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"expires","sortable":false,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"paymentDate","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"createdOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"journalId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false}],"sorting":[{"filterable":{"name":"paymentId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},"direction":"ASC"}]}},"reference":{}}'
+  recorded_at: Fri, 17 Apr 2026 17:32:10 GMT
+recorded_with: VCR 6.3.1

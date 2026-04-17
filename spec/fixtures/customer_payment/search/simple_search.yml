@@ -1,0 +1,69 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/<DEV-REF>/accounting-service/customer-payment-search?orderId=1081505
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 17 Apr 2026 17:32:09 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - bulk-data-search
+      Ruid:
+      - 461d827d-cd17-43f3-8f12-e8b9e479cfcd
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '50'
+      Brightpearl-Next-Throttle-Period:
+      - '50844'
+      Brightpearl-Requests-Remaining:
+      - '196'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=z6T2Y14YYdyUWoU3j7jZ1y9dUqPPPFIcT76.M23ytbk-1776447129.0873733-1.0.1.1-jRZSYH0KxBNkcpq97mlU8FDsSy27WXkdA3swh48uRYB5oyAwnfINJyzIpjGU.n051O7EpIz23th_NdqtwblGI6RZ6.FWfbvj38hZSW0A_YUIQx1uQm7upmHRb52h0vYt;
+        HttpOnly; Secure; Path=/; Domain=brightpearlconnect.com; Expires=Fri, 17 Apr
+        2026 18:02:09 GMT
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9edd2adccba07ea1-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":{"results":[[935253,"RUBY-BP-RECEIPT-REF-0001","RUBY-BP-RECEIPT-CODE-0001","PUNTOS","RECEIPT",1081505,2,"CRC","0.00","100.00",null,"2026-04-17T10:00:00.000-06:00","2026-04-17T11:32:08.000-06:00",3113824]],"metaData":{"morePagesAvailable":false,"resultsAvailable":1,"resultsReturned":1,"firstResult":1,"lastResult":1,"columns":[{"name":"paymentId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"transactionRef","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"transactionCode","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"paymentMethodCode","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"paymentType","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"orderId","sortable":false,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"currencyId","sortable":false,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"currencyCode","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"amountAuthorized","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"amountPaid","sortable":false,"filterable":true,"reportDataType":"STRING","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"expires","sortable":false,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"paymentDate","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"createdOn","sortable":true,"filterable":true,"reportDataType":"PERIOD","referenceData":[],"isFreeTextSearchable":false,"required":false},{"name":"journalId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false}],"sorting":[{"filterable":{"name":"paymentId","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[],"isFreeTextSearchable":false,"required":false},"direction":"ASC"}]}},"reference":{}}'
+  recorded_at: Fri, 17 Apr 2026 17:32:09 GMT
+recorded_with: VCR 6.3.1

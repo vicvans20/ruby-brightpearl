@@ -22,3 +22,4 @@ require 'brightpearl/resources/webhook'
 
 # Accounting
 require 'brightpearl/resources/tax_code'
+require 'brightpearl/resources/customer_payment'
