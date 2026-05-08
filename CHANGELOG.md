@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [0.11.0] - 2026-05-08
+
+### Added
+
+- New resources `ContactCustomFieldMetadata`, `OrderCustomFieldMetadata`, and `ProductCustomFieldMetadata`
+  - Available operations: `GET`
+  - Useful to get the available custom fields for a contact, order, or product and their metadata (name, type, list of values, etc.)
+
 ## [0.10.0] - 2026-04-17
 
 ### Added
