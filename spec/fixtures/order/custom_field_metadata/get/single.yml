@@ -1,0 +1,71 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://euw1.brightpearlconnect.com/public-api/<ACCOUNT>/order-service/sale/custom-field-meta-data/131
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Fri, 08 May 2026 21:24:08 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Transfer-Encoding:
+      - chunked
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - get-custom-fields-metadata
+      Ruid:
+      - fb66f243-65ed-41c3-ada6-e8bcc771cf16
+      Pragma:
+      - no-cache
+      Brightpearl-Installed-Integration-Instance-Id:
+      - '50'
+      Brightpearl-Next-Throttle-Period:
+      - '51230'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=31536000
+      Cf-Cache-Status:
+      - DYNAMIC
+      Set-Cookie:
+      - __cf_bm=Ud9id2TTDW49pQCaKztCVJxmrPmJLIAGpjP7Ts1icMk-1778275448.4348757-1.0.1.1-SOI6kWwNeSB0x_FTPE6pFAgY1axymfm5rkf1Jf1F0awl.zB6cdOJ0eJ2V_VcKYQcrUDa5ie1z8witvxf1u1FVkH3RwpEXr__vudAnbNx4TAqAQ9pgrm0ohDD16tLp_xa;
+        HttpOnly; Secure; Path=/; Domain=brightpearlconnect.com; Expires=Fri, 08 May
+        2026 21:54:08 GMT
+      Server:
+      - cloudflare
+      Cf-Ray:
+      - 9f8b8790be7c9fe7-MIA
+      Alt-Svc:
+      - h3=":443"; ma=86400
+    body:
+      encoding: ASCII-8BIT
+      string: '{"response":[{"id":131,"code":"PCF_TIPONEG","name":"Tipo de Negocio","customFieldType":"SELECT","required":false,"options":{"160":{"id":160,"value":"Contrato
+        Global"},"156":{"id":156,"value":"Negocio Pequeno ($0-$10K)"},"157":{"id":157,"value":"Negocio
+        Mediano ($10K-$30K)"},"158":{"id":158,"value":"Negocio Grande ($30K+)"},"159":{"id":159,"value":"Regalos"}}}]}'
+  recorded_at: Fri, 08 May 2026 21:24:08 GMT
+recorded_with: VCR 6.3.1

@@ -86,6 +86,11 @@ VCR.configure do |config|
     if interaction.request.uri.include?('<ACCOUNT>')
       interaction.request.uri.gsub!('<ACCOUNT>', Brightpearl.config.account)
     end
+
+    # Some accounts can have the same value as dev/app refs, so older cassettes
+    # may contain these placeholders in the public-api account segment.
+    interaction.request.uri.gsub!('/public-api/<DEV-REF>/', "/public-api/#{Brightpearl.config.account}/")
+    interaction.request.uri.gsub!('/public-api/<APP-REF>/', "/public-api/#{Brightpearl.config.account}/")
   end
   
   # Add a before_record hook to sanitize sensitive data in the recorded cassette
@@ -108,6 +113,14 @@ VCR.configure do |config|
 
   config.filter_sensitive_data('<Bearer TOKEN>') do |interaction|
     interaction.request.headers['Authorization'] && interaction.request.headers['Authorization'].first
+  end
+
+  # Keep the public-api account segment stable even when account == dev/app ref.
+  # This must run after filter_sensitive_data hooks because those can rewrite the
+  # URI when a credential value is also the account code.
+  config.before_record do |interaction|
+    interaction.request.uri.gsub!('/public-api/<DEV-REF>/', '/public-api/<ACCOUNT>/')
+    interaction.request.uri.gsub!('/public-api/<APP-REF>/', '/public-api/<ACCOUNT>/')
   end
 
   # Set default cassette options to use the custom matchers
