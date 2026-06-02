@@ -1,5 +1,13 @@
 ## [Unreleased]
 
+## [0.12.0] - 2026-06-02
+
+### Added
+
+- New catalog resources `Brand`, `Channel`, `ProductCategory`, `ProductType`, and `Warehouse`
+  - Available operations: `GET`
+  - Supports fetching the full list (no argument) or a specific record by id-set
+
 ## [0.11.0] - 2026-05-08
 
 ### Added
