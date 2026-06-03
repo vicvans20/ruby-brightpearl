@@ -1,5 +1,23 @@
 ## [Unreleased]
 
+## [0.13.0] - 2026-06-03
+
+### Added
+
+- New contact reference resources `ContactTag`, `ContactGroup`, and `LeadSource`
+  - Available operations: `GET`
+  - Supports fetching the full list (no argument) or a specific record by id-set
+  - Note: `ContactTag` response is a Hash keyed by tag id, not an Array
+- New order reference resources `OrderType` and `OrderStockStatus`
+  - Available operations: `GET`
+  - Supports fetching the full list (no argument) or a specific record by id-set
+- New accounting reference resources `NominalCode` and `PaymentMethod`
+  - Available operations: `GET`
+  - Supports fetching the full list (no argument) or a specific record by id-set
+- New warehouse reference resource `ShippingMethod`
+  - Available operations: `GET`
+  - Supports fetching the full list (no argument) or a specific record by id-set
+
 ## [0.12.0] - 2026-06-02
 
 ### Added
