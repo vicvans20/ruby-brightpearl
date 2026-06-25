@@ -1,5 +1,15 @@
 ## [Unreleased]
 
+## [0.14.0] - 2026-06-25
+
+### Added
+
+- New resource `ExchangeRate`
+  - Available operations: `GET`, `POST`, `PUT`
+
+- New resource `Currency`
+  - Available operations: `SEARCH`
+
 ## [0.13.0] - 2026-06-03
 
 ### Added
