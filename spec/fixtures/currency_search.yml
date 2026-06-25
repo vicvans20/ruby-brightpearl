@@ -1,0 +1,49 @@
+---
+http_interactions:
+- request:
+    method: get
+    uri: https://ws-use.brightpearl.com/public-api/<ACCOUNT>/accounting-service/currency-search
+    body:
+      encoding: US-ASCII
+      string: ''
+    headers:
+      Brightpearl-App-Ref:
+      - "<APP-REF>"
+      Brightpearl-Dev-Ref:
+      - "<DEV-REF>"
+      Authorization:
+      - "<Bearer TOKEN>"
+      Accept-Encoding:
+      - gzip;q=1.0,deflate;q=0.6,identity;q=0.3
+      Accept:
+      - "*/*"
+      User-Agent:
+      - Ruby
+  response:
+    status:
+      code: 200
+      message: OK
+    headers:
+      Date:
+      - Wed, 25 Jun 2026 00:00:00 GMT
+      Content-Type:
+      - application/json;charset=UTF-8
+      Connection:
+      - keep-alive
+      Cache-Control:
+      - no-cache, must-revalidate
+      Expires:
+      - Mon, 20 Dec 1998 01:00:00 GMT
+      Message-Type:
+      - bulk-data-search
+      Brightpearl-Next-Throttle-Period:
+      - '25000'
+      Brightpearl-Requests-Remaining:
+      - '199'
+      Strict-Transport-Security:
+      - max-age=15724800
+    body:
+      encoding: UTF-8
+      string: '{"response":{"results":[[1,"US Dollar","USD","$","1.000000",true,null],[2,"Euro","EUR","€","1.234567",false,"1001"]],"metaData":{"morePagesAvailable":false,"resultsAvailable":2,"resultsReturned":2,"firstResult":1,"lastResult":2,"columns":[{"name":"id","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[]},{"name":"title","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[]},{"name":"code","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[]},{"name":"symbol","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[]},{"name":"exchangeRate","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[]},{"name":"isDefault","sortable":true,"filterable":true,"reportDataType":"BOOLEAN","referenceData":[]},{"name":"exchangeRateVarianceNominalCode","sortable":true,"filterable":true,"reportDataType":"STRING","referenceData":[]}],"sorting":[{"filterable":{"name":"id","sortable":true,"filterable":true,"reportDataType":"IDSET","referenceData":[]},"direction":"ASC"}]}}}'
+  recorded_at: Wed, 25 Jun 2026 00:00:00 GMT
+recorded_with: VCR 6.0.0
